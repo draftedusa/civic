@@ -292,6 +292,24 @@ i[data-lucide]{width:20px;height:20px;stroke:currentColor;display:block;margin:0
 .skeleton::after{content:'';position:absolute;inset:0;background:linear-gradient(90deg,transparent,rgba(255,255,255,.05),transparent);animation:shimmer 1.4s infinite}
 @keyframes shimmer{from{transform:translateX(-100%)}to{transform:translateX(100%)}}
 .skv{height:26px;width:55%}.skl{height:9px;width:75%;margin-top:4px}
+
+/* auth overlay */
+.auth-overlay{position:fixed;inset:0;background:rgba(10,8,24,.97);z-index:10000;display:flex;align-items:center;justify-content:center}
+.auth-card{background:var(--panel);border:1px solid var(--border2);border-radius:16px;padding:40px;width:100%;max-width:400px}
+.auth-logo{text-align:center;margin-bottom:32px}
+.auth-title{font-family:var(--sy);font-size:22px;font-weight:800;color:#fff;margin-bottom:8px;text-align:center}
+.auth-sub{font-size:13px;color:var(--t2);text-align:center;margin-bottom:28px}
+.auth-tabs{display:flex;gap:4px;background:var(--panel2);border-radius:8px;padding:4px;margin-bottom:20px}
+.auth-tab{flex:1;padding:8px;border-radius:6px;font-family:var(--sy);font-size:12px;font-weight:600;border:none;background:transparent;color:var(--t2);cursor:pointer;transition:all .2s}
+.auth-tab.on{background:var(--teal);color:#fff}
+.auth-err{font-size:11px;color:#ff3d50;margin-top:8px;text-align:center;min-height:16px}
+
+/* user chip */
+.user-chip{display:flex;align-items:center;gap:8px;background:var(--panel2);border:1px solid var(--border);border-radius:20px;padding:4px 10px 4px 4px}
+.user-av{width:24px;height:24px;border-radius:50%;background:var(--purple-light);border:1px solid rgba(45,29,138,.6);display:flex;align-items:center;justify-content:center;font-family:var(--sy);font-size:11px;font-weight:800;color:#fff;flex-shrink:0;text-transform:uppercase}
+.user-em{font-family:var(--mo);font-size:10px;color:var(--t2);max-width:140px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.logout-btn{font-size:9px;font-weight:700;letter-spacing:.06em;color:var(--t3);background:transparent;border:none;cursor:pointer;padding:0;font-family:var(--sy);transition:color .2s}
+.logout-btn:hover{color:var(--red)}
 </style>
 </head>
 <body>
@@ -316,6 +334,11 @@ i[data-lucide]{width:20px;height:20px;stroke:currentColor;display:block;margin:0
     <div class="nav-reg">Southeast USA</div>
     <div class="live-chip"><div class="ldot"></div><span class="ltxt">LIVE</span></div>
     <div class="nav-clk" id="clock">--:--:-- --</div>
+    <div class="user-chip" id="user-chip" style="display:none">
+      <div class="user-av" id="user-av">?</div>
+      <span class="user-em" id="user-em"></span>
+      <button class="logout-btn" onclick="doSignOut()">SIGN OUT</button>
+    </div>
   </div>
 </nav>
 
@@ -525,6 +548,77 @@ i[data-lucide]{width:20px;height:20px;stroke:currentColor;display:block;margin:0
 const SUPABASE_URL = 'https://vawcwmnkhxlicopcwcdv.supabase.co';
 const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InZhd2N3bW5raHhsaWNvcGN3Y2R2Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzYzMDc1OTIsImV4cCI6MjA5MTg4MzU5Mn0.E2W90UpoBWCwrdJXz816gUYS9gfdteODlVcq950c_8Q';
 const sb = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+
+// ── AUTH ──
+let currentUser=null, authMode='signin';
+
+function authTab(mode){
+  authMode=mode;
+  document.getElementById('tab-signin').classList.toggle('on',mode==='signin');
+  document.getElementById('tab-signup').classList.toggle('on',mode==='signup');
+  const btn=document.getElementById('auth-btn');
+  btn.textContent=mode==='signin'?'Sign In →':'Create Account →';
+  document.getElementById('auth-err').textContent='';
+  document.getElementById('auth-err').style.color='#ff3d50';
+  document.getElementById('auth-pw').autocomplete=mode==='signin'?'current-password':'new-password';
+}
+
+async function doAuth(){
+  const email=document.getElementById('auth-email').value.trim();
+  const pw=document.getElementById('auth-pw').value;
+  const errEl=document.getElementById('auth-err');
+  const btn=document.getElementById('auth-btn');
+  if(!email||!pw){errEl.textContent='Email and password are required.';return;}
+  btn.disabled=true;btn.innerHTML='<span class="spin"></span>';
+  errEl.textContent='';
+  const res=authMode==='signin'
+    ?await sb.auth.signInWithPassword({email,password:pw})
+    :await sb.auth.signUp({email,password:pw});
+  btn.disabled=false;
+  btn.textContent=authMode==='signin'?'Sign In →':'Create Account →';
+  if(res.error){errEl.textContent=res.error.message;return;}
+  if(authMode==='signup'&&res.data?.user&&!res.data?.session){
+    errEl.style.color='var(--green)';
+    errEl.textContent='Account created — check your email to confirm, then sign in.';
+    return;
+  }
+  onAuthSuccess(res.data.session?.user||res.data.user);
+}
+
+async function doSignOut(){
+  await sb.auth.signOut();
+}
+
+function onAuthSuccess(user){
+  if(!user)return;
+  currentUser=user;
+  document.getElementById('auth-overlay').style.display='none';
+  const email=user.email||'';
+  document.getElementById('user-av').textContent=email.charAt(0).toUpperCase();
+  document.getElementById('user-em').textContent=email;
+  document.getElementById('user-chip').style.display='flex';
+}
+
+// Check existing session on load, then watch for changes
+(async()=>{
+  const{data:{session}}=await sb.auth.getSession();
+  if(session){onAuthSuccess(session.user);}
+  // overlay stays visible if no session (it's display:flex by default)
+})();
+
+sb.auth.onAuthStateChange((event,session)=>{
+  if(event==='SIGNED_IN'&&session){
+    onAuthSuccess(session.user);
+  } else if(event==='SIGNED_OUT'){
+    currentUser=null;
+    document.getElementById('user-chip').style.display='none';
+    document.getElementById('auth-overlay').style.display='flex';
+    document.getElementById('auth-email').value='';
+    document.getElementById('auth-pw').value='';
+    document.getElementById('auth-err').textContent='';
+    document.getElementById('auth-err').style.color='#ff3d50';
+  }
+});
 
 let allReports=[], selCat=null, miniMap=null, miniMarker=null, mainMap=null, curLat=null, curLng=null, addrT=null;
 
@@ -772,5 +866,35 @@ document.querySelector('.ph-url').innerHTML='<div class="udot"></div><span>'+win
 lucide.createIcons();
 </script>
 <div id="toasts" style="position:fixed;bottom:24px;right:24px;z-index:9999;display:flex;flex-direction:column;gap:8px;pointer-events:none"></div>
+
+<!-- ═══ AUTH OVERLAY ═══ -->
+<div id="auth-overlay" class="auth-overlay">
+  <div class="auth-card">
+    <div class="auth-logo">
+      <svg width="36" height="36" viewBox="0 0 18 18" fill="none" style="display:block;margin:0 auto">
+        <path d="M2 14L5 8L7.5 11.5L10 4L12.5 9L15 6.5L17 10.5" stroke="#00788C" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+        <circle cx="10" cy="4" r="1.8" fill="#00788C"/>
+      </svg>
+      <div style="font-family:var(--sy);font-size:20px;font-weight:800;letter-spacing:.16em;color:var(--teal);margin-top:10px">CIVIC</div>
+      <div style="font-size:9px;color:var(--t3);letter-spacing:.09em;margin-top:2px">Citizen Intelligence &amp; Visibility in Communities</div>
+    </div>
+    <div class="auth-title">Operator Access</div>
+    <div class="auth-sub">Sign in to the CIVIC platform to submit and monitor city reports</div>
+    <div class="auth-tabs">
+      <button class="auth-tab on" id="tab-signin" onclick="authTab('signin')">Sign In</button>
+      <button class="auth-tab" id="tab-signup" onclick="authTab('signup')">Sign Up</button>
+    </div>
+    <div class="fr">
+      <div class="fl">Email</div>
+      <input class="fi" id="auth-email" type="email" placeholder="you@example.com" autocomplete="email">
+    </div>
+    <div class="fr" style="margin-top:12px">
+      <div class="fl">Password</div>
+      <input class="fi" id="auth-pw" type="password" placeholder="••••••••" autocomplete="current-password" onkeydown="if(event.key==='Enter')doAuth()">
+    </div>
+    <div class="auth-err" id="auth-err"></div>
+    <button class="sub-btn" id="auth-btn" onclick="doAuth()" style="margin-top:16px">Sign In →</button>
+  </div>
+</div>
 </body>
 </html>
