@@ -10,6 +10,10 @@
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+<script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+<link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.css"/>
+<link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.Default.css"/>
+<script src="https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js"></script>
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
 :root{
@@ -280,6 +284,11 @@ button,input,select,textarea{font-family:var(--in)}
 
 .spin{display:inline-block;width:13px;height:13px;border:2px solid var(--border2);border-top-color:var(--teal);border-radius:50%;animation:sp .7s linear infinite}
 @keyframes sp{to{transform:rotate(360deg)}}
+i[data-lucide]{width:20px;height:20px;stroke:currentColor;display:block;margin:0 auto 6px}
+.skeleton{background:var(--border);border-radius:4px;position:relative;overflow:hidden}
+.skeleton::after{content:'';position:absolute;inset:0;background:linear-gradient(90deg,transparent,rgba(255,255,255,.05),transparent);animation:shimmer 1.4s infinite}
+@keyframes shimmer{from{transform:translateX(-100%)}to{transform:translateX(100%)}}
+.skv{height:26px;width:55%}.skl{height:9px;width:75%;margin-top:4px}
 </style>
 </head>
 <body>
@@ -319,12 +328,12 @@ button,input,select,textarea{font-family:var(--in)}
 
       <div class="sec-t">Issue Category *</div>
       <div class="cat-grid">
-        <div class="cat-p" id="cat-POTHOLE" onclick="pickCat('POTHOLE','Road / Pothole','#ff3d50','⚠️')"><span class="cat-ic">⚠️</span><div class="cat-nm">Pothole / Road Hazard</div></div>
-        <div class="cat-p" id="cat-GRAFFITI" onclick="pickCat('GRAFFITI','Graffiti','#3b8bff','🎨')"><span class="cat-ic">🎨</span><div class="cat-nm">Graffiti / Vandalism</div></div>
-        <div class="cat-p" id="cat-DEBRIS" onclick="pickCat('DEBRIS','Debris','#f5c518','🗑️')"><span class="cat-ic">🗑️</span><div class="cat-nm">Debris / Obstruction</div></div>
-        <div class="cat-p" id="cat-OUTAGE" onclick="pickCat('OUTAGE','Internet/Cable Outage','#a78bfa','📡')"><span class="cat-ic">📡</span><div class="cat-nm">Internet / Cable Outage</div></div>
-        <div class="cat-p" id="cat-UTILITY" onclick="pickCat('UTILITY','Power / Utility','#fb923c','⚡')"><span class="cat-ic">⚡</span><div class="cat-nm">Power / Water / Utility</div></div>
-        <div class="cat-p" id="cat-STREETLIGHT" onclick="pickCat('STREETLIGHT','Streetlight Out','#f5c518','💡')"><span class="cat-ic">💡</span><div class="cat-nm">Streetlight Out</div></div>
+        <div class="cat-p" id="cat-POTHOLE" onclick="pickCat('POTHOLE','Road / Pothole','#ff3d50','⚠️')"><span class="cat-ic"><i data-lucide="alert-triangle"></i></span><div class="cat-nm">Pothole / Road Hazard</div></div>
+        <div class="cat-p" id="cat-GRAFFITI" onclick="pickCat('GRAFFITI','Graffiti','#3b8bff','🎨')"><span class="cat-ic"><i data-lucide="paintbrush"></i></span><div class="cat-nm">Graffiti / Vandalism</div></div>
+        <div class="cat-p" id="cat-DEBRIS" onclick="pickCat('DEBRIS','Debris','#f5c518','🗑️')"><span class="cat-ic"><i data-lucide="trash-2"></i></span><div class="cat-nm">Debris / Obstruction</div></div>
+        <div class="cat-p" id="cat-OUTAGE" onclick="pickCat('OUTAGE','Internet/Cable Outage','#a78bfa','📡')"><span class="cat-ic"><i data-lucide="wifi-off"></i></span><div class="cat-nm">Internet / Cable Outage</div></div>
+        <div class="cat-p" id="cat-UTILITY" onclick="pickCat('UTILITY','Power / Utility','#fb923c','⚡')"><span class="cat-ic"><i data-lucide="zap"></i></span><div class="cat-nm">Power / Water / Utility</div></div>
+        <div class="cat-p" id="cat-STREETLIGHT" onclick="pickCat('STREETLIGHT','Streetlight Out','#f5c518','💡')"><span class="cat-ic"><i data-lucide="lightbulb"></i></span><div class="cat-nm">Streetlight Out</div></div>
       </div>
 
       <div id="prov-row" style="display:none;margin-bottom:16px">
@@ -405,15 +414,15 @@ button,input,select,textarea{font-family:var(--in)}
     <div class="sig-p">
       <div class="sig-pt">Signal Pipeline — Message to Action</div>
       <div class="sig-ns">
-        <div class="sig-n"><div class="sig-i" id="ps0">📱</div><div class="sig-nm">Citizen</div></div>
+        <div class="sig-n"><div class="sig-i" id="ps0"><i data-lucide="smartphone"></i></div><div class="sig-nm">Citizen</div></div>
         <div class="sig-l"><div class="sig-lf" id="psc0"></div></div>
-        <div class="sig-n"><div class="sig-i" id="ps1">📡</div><div class="sig-nm">Intake</div></div>
+        <div class="sig-n"><div class="sig-i" id="ps1"><i data-lucide="radio"></i></div><div class="sig-nm">Intake</div></div>
         <div class="sig-l"><div class="sig-lf" id="psc1"></div></div>
-        <div class="sig-n"><div class="sig-i" id="ps2">🧠</div><div class="sig-nm">AI</div></div>
+        <div class="sig-n"><div class="sig-i" id="ps2"><i data-lucide="cpu"></i></div><div class="sig-nm">AI</div></div>
         <div class="sig-l"><div class="sig-lf" id="psc2"></div></div>
-        <div class="sig-n"><div class="sig-i" id="ps3">🔀</div><div class="sig-nm">Route</div></div>
+        <div class="sig-n"><div class="sig-i" id="ps3"><i data-lucide="git-branch"></i></div><div class="sig-nm">Route</div></div>
         <div class="sig-l"><div class="sig-lf" id="psc3"></div></div>
-        <div class="sig-n"><div class="sig-i" id="ps4">🏙️</div><div class="sig-nm">Response</div></div>
+        <div class="sig-n"><div class="sig-i" id="ps4"><i data-lucide="building-2"></i></div><div class="sig-nm">Response</div></div>
       </div>
     </div>
 
@@ -493,15 +502,15 @@ button,input,select,textarea{font-family:var(--in)}
     <div class="ssd">
       <div class="ssdt">Signal Pipeline</div>
       <div class="ssdr">
-        <div class="ssdn"><div class="ssdi" id="d0">📱</div><div class="ssdl">Citizen</div></div>
+        <div class="ssdn"><div class="ssdi" id="d0"><i data-lucide="smartphone"></i></div><div class="ssdl">Citizen</div></div>
         <div class="ssdc"><div class="ssdcf" id="dc0"></div></div>
-        <div class="ssdn"><div class="ssdi" id="d1">📡</div><div class="ssdl">Intake</div></div>
+        <div class="ssdn"><div class="ssdi" id="d1"><i data-lucide="radio"></i></div><div class="ssdl">Intake</div></div>
         <div class="ssdc"><div class="ssdcf" id="dc1"></div></div>
-        <div class="ssdn"><div class="ssdi" id="d2">🧠</div><div class="ssdl">AI</div></div>
+        <div class="ssdn"><div class="ssdi" id="d2"><i data-lucide="cpu"></i></div><div class="ssdl">AI</div></div>
         <div class="ssdc"><div class="ssdcf" id="dc2"></div></div>
-        <div class="ssdn"><div class="ssdi" id="d3">🔀</div><div class="ssdl">Route</div></div>
+        <div class="ssdn"><div class="ssdi" id="d3"><i data-lucide="git-branch"></i></div><div class="ssdl">Route</div></div>
         <div class="ssdc"><div class="ssdcf" id="dc3"></div></div>
-        <div class="ssdn"><div class="ssdi" id="d4">🏙️</div><div class="ssdl">Response</div></div>
+        <div class="ssdn"><div class="ssdi" id="d4"><i data-lucide="building-2"></i></div><div class="ssdl">Response</div></div>
       </div>
     </div>
   </div>
@@ -648,6 +657,7 @@ function renderPortalFeed(){
 function initDash(){
   mainMap=L.map('main-map',{zoomControl:true,attributionControl:false}).setView([34.5,-80.5],6);
   L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',{maxZoom:18}).addTo(mainMap);
+  window.cg=L.markerClusterGroup({maxClusterRadius:60,iconCreateFunction:function(c){return L.divIcon({html:'<div style="width:34px;height:34px;border-radius:50%;background:#ff3d50;border:2px solid rgba(255,255,255,.85);display:flex;align-items:center;justify-content:center;font-family:var(--sy);font-size:13px;font-weight:800;color:#fff">'+c.getChildCount()+'</div>',iconSize:[34,34],iconAnchor:[17,17]})}});mainMap.addLayer(window.cg);
   initChart();loadReports();
 }
 
@@ -665,7 +675,7 @@ function pinIcon(r){
 function addPin(r){
   if(!mainMap||!r.lat||!r.lng)return;
   const col=cCol(r.category);
-  L.marker([r.lat,r.lng],{icon:pinIcon(r)}).addTo(mainMap).bindPopup(`
+  L.marker([r.lat,r.lng],{icon:pinIcon(r)}).addTo(window.cg).bindPopup(`
     <div style="font-family:'Inter',sans-serif;min-width:210px">
       <div style="font-family:'Syne',sans-serif;font-size:13px;font-weight:700;color:#fff;margin-bottom:5px">${cIco(r.category)} ${r.category} — <span style="color:${uCol(r.urgency)}">${r.urgency}</span></div>
       <div style="font-size:11px;color:#5d7a96;margin-bottom:4px">${r.location_text||'—'}</div>
@@ -679,6 +689,7 @@ function addPin(r){
 }
 
 async function loadReports(){
+  ['kpi-t','kpi-e','kpi-o'].forEach(id=>{const x=document.getElementById(id);if(x)x.innerHTML='<div class="skeleton skv"></div><div class="skeleton skl"></div>';});
   const{data,error}=await sb.from('reports').select('*').order('created_at',{ascending:false}).limit(50);
   if(error){console.error(error);return;}
   allReports=data||[];allReports.forEach(addPin);
@@ -689,7 +700,7 @@ async function loadReports(){
 
 function subscribe(){
   sb.channel('civic').on('postgres_changes',{event:'INSERT',schema:'public',table:'reports'},p=>{
-    const r=p.new;allReports.unshift(r);addPin(r);
+    const r=p.new;allReports.unshift(r);showToast(r);addPin(r);
     renderFeed();renderIL();updateKPIs();updateAICard(r);renderPortalFeed();runSig('d');
     if(mainMap&&r.lat&&r.lng)mainMap.flyTo([r.lat,r.lng],11,{duration:1.8});
   }).subscribe();
@@ -750,6 +761,13 @@ function updateAICard(r){
 
 setTimeout(()=>runSig('p'),800);setInterval(()=>runSig('p'),14000);
 setTimeout(()=>runSig('d'),1200);setInterval(()=>runSig('d'),14000);
+
+function showToast(r){const col=r.urgency==='HIGH'?'#ff3d50':r.urgency==='MED'?'#f5c518':'#3b8bff';const t=document.createElement('div');t.style.cssText=`background:var(--panel2);border:1px solid ${col}44;border-left:3px solid ${col};border-radius:8px;padding:10px 14px;min-width:260px;max-width:320px;pointer-events:all;opacity:0;transform:translateY(8px);transition:all .3s`;document.getElementById('toasts').appendChild(t);t.innerHTML=`<div style="font-family:var(--sy);font-size:9px;font-weight:700;color:${col};letter-spacing:.12em;margin-bottom:4px">NEW REPORT — ${r.urgency}</div><div style="font-size:12px;color:var(--t);font-weight:500;margin-bottom:3px">${r.category}${r.provider?' · '+r.provider:''}</div><div style="font-size:10px;color:var(--t2);margin-bottom:3px">${r.location_text||'Unknown location'}</div><div style="font-size:9px;color:var(--t3);font-family:var(--mo)">${r.ticket_id} → ${r.routed_to}</div>`;requestAnimationFrame(()=>{t.style.opacity='1';t.style.transform='translateY(0)'});setTimeout(()=>{t.style.opacity='0';t.style.transform='translateY(4px)'},4000);setTimeout(()=>t.remove(),4400);}
+
+document.querySelector('.ph-url').innerHTML='<div class="udot"></div><span>'+window.location.host+'/report</span>';
+
+lucide.createIcons();
 </script>
+<div id="toasts" style="position:fixed;bottom:24px;right:24px;z-index:9999;display:flex;flex-direction:column;gap:8px;pointer-events:none"></div>
 </body>
 </html>
