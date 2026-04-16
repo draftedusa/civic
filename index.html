@@ -38,7 +38,7 @@ button,input,select,textarea{font-family:var(--in)}
 ::-webkit-scrollbar{width:4px}::-webkit-scrollbar-track{background:transparent}::-webkit-scrollbar-thumb{background:var(--border2);border-radius:2px}
 
 /* NAV */
-.nav{height:52px;background:var(--purple);border-bottom:1px solid rgba(0,120,140,0.3);display:flex;align-items:center;padding:0 20px;gap:16px;position:sticky;top:0;z-index:2000}
+.nav{height:52px;background:linear-gradient(135deg,#1D1160 0%,#16122f 100%);border-bottom:1px solid rgba(0,120,140,0.3);display:flex;align-items:center;padding:0 20px;gap:16px;position:sticky;top:0;z-index:2000}
 .nav-mark{width:34px;height:34px;border-radius:9px;background:var(--teal-dim);border:1px solid rgba(0,120,140,.28);display:flex;align-items:center;justify-content:center;flex-shrink:0}
 .nav-word{font-family:var(--sy);font-size:18px;font-weight:800;letter-spacing:.14em;color:var(--teal)}
 .nav-tag{font-size:9px;color:var(--t3);letter-spacing:.09em;line-height:1;margin-top:1px}
@@ -60,7 +60,7 @@ button,input,select,textarea{font-family:var(--in)}
 
 /* ══ PORTAL ══ */
 .portal{display:grid;grid-template-columns:1fr 400px;min-height:calc(100vh - 52px)}
-.pfc{padding:32px 28px 60px;border-right:1px solid var(--border);overflow-y:auto;max-height:calc(100vh - 52px)}
+.pfc{padding:32px 28px 60px;border-right:1px solid var(--border);overflow-y:auto;max-height:calc(100vh - 52px);background:linear-gradient(180deg,rgba(0,120,140,0.06) 0%,transparent 240px)}
 .ph-eye{font-family:var(--sy);font-size:9px;font-weight:700;letter-spacing:.2em;color:var(--teal);margin-bottom:10px}
 .ph-h{font-family:var(--sy);font-size:26px;font-weight:800;color:#fff;line-height:1.15;margin-bottom:10px}
 .ph-h span{color:var(--teal)}
@@ -175,7 +175,9 @@ button,input,select,textarea{font-family:var(--in)}
 
 /* KPI cards — Insurance dashboard */
 .kpi-st{display:flex;flex-direction:column;gap:8px;flex-shrink:0}
-.kpi-c{background:var(--panel2);border:1px solid var(--border);border-radius:var(--r);padding:11px 13px;position:relative;overflow:hidden}
+.kpi-c{background:var(--panel2);border:1px solid var(--border);border-radius:var(--r);padding:11px 13px;position:relative;overflow:hidden;cursor:pointer;transition:border-color .18s,background .18s}
+.kpi-c:hover{border-color:rgba(0,120,140,.4);background:var(--panel3)}
+.kpi-c.fil-on{border-color:var(--teal);background:var(--teal-faint)}
 .kpi-c::after{content:'';position:absolute;top:0;right:0;width:3px;height:100%;border-radius:0 var(--r) var(--r) 0}
 .kpi-c.ct::after{background:var(--purple)}.kpi-c.ce::after{background:var(--teal)}
 .kpi-c.co::after{background:var(--gray)}.kpi-c.cr::after{background:var(--teal)}
@@ -193,8 +195,10 @@ button,input,select,textarea{font-family:var(--in)}
 /* incident list */
 .il{flex:1;overflow-y:auto;padding:12px 16px}
 .il-t{font-family:var(--sy);font-size:9px;font-weight:700;letter-spacing:.14em;color:var(--t3);text-transform:uppercase;margin-bottom:10px}
-.ili{display:flex;align-items:flex-start;gap:9px;padding:9px 0;border-bottom:1px solid var(--border);cursor:pointer}
+.ili{display:flex;align-items:flex-start;gap:9px;padding:9px 10px 9px 9px;border-bottom:1px solid var(--border);border-left:2px solid transparent;cursor:pointer;transition:background .15s,border-left-color .15s,padding-left .15s;border-radius:0 var(--r) var(--r) 0;margin:0 -10px 0 -9px}
 .ili:last-child{border-bottom:none}
+.ili:hover{background:var(--purple-faint);border-left-color:var(--teal);padding-left:11px}
+.ili.active{background:var(--teal-faint);border-left-color:var(--teal);padding-left:11px}
 .ili-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0;margin-top:4px}
 .ili-b{flex:1;min-width:0}
 .ili-ty{font-size:11px;font-weight:600;color:var(--t);margin-bottom:2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
@@ -205,6 +209,10 @@ button,input,select,textarea{font-family:var(--in)}
 
 /* map center */
 .dmc{display:flex;flex-direction:column;position:relative}
+.map-filter{display:flex;align-items:center;gap:6px;padding:8px 14px;border-bottom:1px solid var(--border);background:var(--panel);flex-shrink:0;flex-wrap:wrap}
+.mfp{padding:5px 13px;border-radius:20px;font-family:var(--sy);font-size:10px;font-weight:700;letter-spacing:.06em;background:transparent;border:1px solid var(--border2);color:var(--t2);cursor:pointer;transition:all .18s}
+.mfp:hover{border-color:rgba(0,120,140,.4);color:var(--teal)}
+.mfp.on{background:var(--teal);border-color:var(--teal);color:#fff}
 .dmw{flex:1;position:relative;min-height:0}
 #main-map{width:100%;height:100%}
 
@@ -306,7 +314,7 @@ i[data-lucide]{width:20px;height:20px;stroke:currentColor;display:block;margin:0
 
 /* user chip */
 .user-chip{display:flex;align-items:center;gap:8px;background:var(--panel2);border:1px solid var(--border);border-radius:20px;padding:4px 10px 4px 4px}
-.user-av{width:24px;height:24px;border-radius:50%;background:var(--purple-light);border:1px solid rgba(45,29,138,.6);display:flex;align-items:center;justify-content:center;font-family:var(--sy);font-size:11px;font-weight:800;color:#fff;flex-shrink:0;text-transform:uppercase}
+.user-av{width:32px;height:32px;border-radius:50%;background:var(--teal);border:1px solid rgba(0,120,140,.4);display:flex;align-items:center;justify-content:center;font-family:var(--sy);font-size:13px;font-weight:700;color:#fff;flex-shrink:0;text-transform:uppercase}
 .user-em{font-family:var(--mo);font-size:10px;color:var(--t2);max-width:140px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 .logout-btn{font-size:9px;font-weight:700;letter-spacing:.06em;color:var(--t3);background:transparent;border:none;cursor:pointer;padding:0;font-family:var(--sy);transition:color .2s}
 .logout-btn:hover{color:var(--red)}
@@ -348,7 +356,7 @@ i[data-lucide]{width:20px;height:20px;stroke:currentColor;display:block;margin:0
   <div class="pfc">
     <div id="form-area">
       <div class="ph-eye">Civic Reporting Platform</div>
-      <div class="ph-h">Report a<br><span>City Issue</span></div>
+      <div class="ph-h">Report a <span>City Issue</span></div>
       <div class="ph-s">Your report is classified by AI, geo-tagged, and routed to the right city team in seconds — no phone trees, no hold music, no bureaucracy.</div>
       <div class="ph-url"><div class="udot"></div>civic.city/report</div>
 
@@ -468,9 +476,9 @@ i[data-lucide]{width:20px;height:20px;stroke:currentColor;display:block;margin:0
     <div class="dsl-hdr">
       <div class="dsl-ht">System Overview</div>
       <div class="kpi-st">
-        <div class="kpi-c ct"><div class="kpi-l">Total Reports</div><div class="kpi-tp"><div class="kpi-v" style="color:#fff" id="kpi-t">—</div><div class="kpi-ico" style="background:var(--teal-dim)">📊</div></div><div class="kpi-d" style="color:var(--teal)">+4 this hour</div></div>
-        <div class="kpi-c ce"><div class="kpi-l">Emergencies</div><div class="kpi-tp"><div class="kpi-v" style="color:var(--red)" id="kpi-e">—</div><div class="kpi-ico" style="background:var(--rd)">🚨</div></div><div class="kpi-d" style="color:var(--red)">Active dispatch</div></div>
-        <div class="kpi-c co"><div class="kpi-l">Outage Tickets</div><div class="kpi-tp"><div class="kpi-v" style="color:var(--teal)" id="kpi-o">—</div><div class="kpi-ico" style="background:var(--teal-dim)">📡</div></div><div class="kpi-d" style="color:var(--teal)">Spectrum +3</div></div>
+        <div class="kpi-c ct" onclick="filterMap('all',this)"><div class="kpi-l">Total Reports</div><div class="kpi-tp"><div class="kpi-v" style="color:#fff" id="kpi-t">—</div><div class="kpi-ico" style="background:var(--teal-dim)">📊</div></div><div class="kpi-d" style="color:var(--teal)">+4 this hour</div></div>
+        <div class="kpi-c ce" onclick="filterMap('emergency',this)"><div class="kpi-l">Emergencies</div><div class="kpi-tp"><div class="kpi-v" style="color:var(--red)" id="kpi-e">—</div><div class="kpi-ico" style="background:var(--rd)">🚨</div></div><div class="kpi-d" style="color:var(--red)">Active dispatch</div></div>
+        <div class="kpi-c co" onclick="filterMap('outage',this)"><div class="kpi-l">Outage Tickets</div><div class="kpi-tp"><div class="kpi-v" style="color:var(--teal)" id="kpi-o">—</div><div class="kpi-ico" style="background:var(--teal-dim)">📡</div></div><div class="kpi-d" style="color:var(--teal)">Spectrum +3</div></div>
         <div class="kpi-c cr"><div class="kpi-l">Avg Response</div><div class="kpi-tp"><div class="kpi-v" style="color:var(--yellow)">6.2<span style="font-size:12px;font-weight:400;color:var(--t3)">m</span></div><div class="kpi-ico" style="background:var(--yd)">⏱</div></div><div class="kpi-d" style="color:var(--green)">↓ improving</div></div>
       </div>
     </div>
@@ -482,6 +490,13 @@ i[data-lucide]{width:20px;height:20px;stroke:currentColor;display:block;margin:0
   </div>
 
   <div class="dmc">
+    <div class="map-filter">
+      <button class="mfp on" onclick="filterMap('all',this)">All</button>
+      <button class="mfp" onclick="filterMap('emergency',this)">Emergency</button>
+      <button class="mfp" onclick="filterMap('outage',this)">Outage</button>
+      <button class="mfp" onclick="filterMap('infrastructure',this)">Infrastructure</button>
+      <button class="mfp" onclick="filterMap('environment',this)">Environment</button>
+    </div>
     <div class="dmw">
       <div id="main-map"></div>
       <div class="mab">
@@ -620,7 +635,7 @@ sb.auth.onAuthStateChange((event,session)=>{
   }
 });
 
-let allReports=[], selCat=null, miniMap=null, miniMarker=null, mainMap=null, curLat=null, curLng=null, addrT=null;
+let allReports=[], selCat=null, miniMap=null, miniMarker=null, mainMap=null, curLat=null, curLng=null, addrT=null, activeFilter='all';
 
 // clock
 function tick(){const n=new Date(),h=String(n.getHours()%12||12),m=String(n.getMinutes()).padStart(2,'0'),s=String(n.getSeconds()).padStart(2,'0'),ap=n.getHours()>=12?'PM':'AM';const e=document.getElementById('clock');if(e)e.textContent=`${h}:${m}:${s} ${ap}`;}
@@ -816,10 +831,21 @@ function renderFeed(){
   document.getElementById('fdc').textContent=`${allReports.length} active`;
 }
 
+function getFilteredReports(){
+  if(activeFilter==='all')return allReports;
+  if(activeFilter==='emergency')return allReports.filter(r=>r.urgency==='HIGH');
+  if(activeFilter==='outage')return allReports.filter(r=>r.category==='OUTAGE');
+  return allReports.filter(r=>(r.category||'').toLowerCase()===activeFilter.toLowerCase());
+}
+function setActiveIli(el){
+  document.querySelectorAll('.ili.active').forEach(x=>x.classList.remove('active'));
+  el.classList.add('active');
+}
 function renderIL(){
   const el=document.getElementById('il');if(!el)return;
-  el.innerHTML='<div class="il-t">Active Incidents</div>'+allReports.slice(0,10).map(r=>`
-    <div class="ili" onclick='updateAICard(${JSON.stringify(r).replace(/'/g,"&#39;")})'>
+  const rows=getFilteredReports().slice(0,10);
+  el.innerHTML='<div class="il-t">Active Incidents</div>'+rows.map(r=>`
+    <div class="ili" onclick='setActiveIli(this);updateAICard(${JSON.stringify(r).replace(/'/g,"&#39;")})'>
       <div class="ili-dot" style="background:${cCol(r.category)}"></div>
       <div class="ili-b"><div class="ili-ty">${cIco(r.category)} ${r.category}</div><div class="ili-lo">${r.location_text||'—'}</div></div>
       <div class="ili-r"><span class="ili-ba ${bClass(r)}">${r.urgency}</span><span class="ili-tk">${(r.ticket_id||'').slice(-6)}</span></div>
@@ -831,6 +857,32 @@ function updateKPIs(){
   ['kpi-t','mab-t'].forEach(id=>{const x=document.getElementById(id);if(x)x.textContent=t;});
   ['kpi-e','mab-e'].forEach(id=>{const x=document.getElementById(id);if(x)x.textContent=e;});
   ['kpi-o','mab-o'].forEach(id=>{const x=document.getElementById(id);if(x)x.textContent=o;});
+}
+
+function filterMap(type,btn){
+  activeFilter=type;
+  // Update filter pill bar active state
+  document.querySelectorAll('.mfp').forEach(p=>p.classList.remove('on'));
+  if(btn&&btn.classList.contains('mfp'))btn.classList.add('on');
+  else{
+    const pills=document.querySelectorAll('.mfp');
+    pills.forEach(p=>{
+      const pt=p.getAttribute('onclick')||'';
+      if(pt.includes("'"+type+"'")||pt.includes('"'+type+'"'))p.classList.add('on');
+    });
+  }
+  // Update KPI card active state
+  document.querySelectorAll('.kpi-c').forEach(k=>k.classList.remove('fil-on'));
+  if(btn&&btn.classList.contains('kpi-c'))btn.classList.add('fil-on');
+  // Re-render incident list
+  renderIL();
+  // Re-render map pins
+  if(window.cg){
+    window.cg.clearLayers();
+    getFilteredReports().forEach(r=>{
+      if(r.lat&&r.lng)addPin(r);
+    });
+  }
 }
 
 function updateAICard(r){
