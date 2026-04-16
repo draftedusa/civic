@@ -318,6 +318,72 @@ i[data-lucide]{width:20px;height:20px;stroke:currentColor;display:block;margin:0
 .user-em{font-family:var(--mo);font-size:10px;color:var(--t2);max-width:140px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 .logout-btn{font-size:9px;font-weight:700;letter-spacing:.06em;color:var(--t3);background:transparent;border:none;cursor:pointer;padding:0;font-family:var(--sy);transition:color .2s}
 .logout-btn:hover{color:var(--red)}
+
+/* role badge */
+.role-badge{font-family:var(--sy);font-size:8px;font-weight:700;letter-spacing:.08em;padding:2px 7px;border-radius:10px}
+.role-badge.op{background:var(--teal-dim);color:var(--teal);border:1px solid rgba(0,120,140,.25)}
+.role-badge.ct{background:var(--panel3);color:var(--t3);border:1px solid var(--border)}
+
+/* present button */
+.present-btn{background:var(--purple-dim);border:1px solid var(--border);border-radius:6px;padding:5px 12px;font-family:var(--sy);font-size:10px;font-weight:700;letter-spacing:.08em;color:var(--t);cursor:pointer;transition:background .2s}
+.present-btn:hover{background:rgba(29,17,96,.3);color:#fff}
+.present-wm{position:fixed;bottom:20px;left:20px;z-index:3000;font-family:var(--sy);font-size:11px;font-weight:700;letter-spacing:.14em;color:rgba(255,255,255,.18);pointer-events:none;display:none}
+.present-exit{position:fixed;top:16px;right:16px;z-index:3001;background:var(--panel2);border:1px solid var(--border2);border-radius:8px;padding:7px 14px;font-family:var(--sy);font-size:11px;font-weight:700;color:var(--t2);cursor:pointer;display:none;align-items:center;gap:6px}
+.present-exit:hover{color:var(--t)}
+body.presenting .nav{display:none}
+body.presenting .dash{height:100vh}
+body.presenting .present-wm{display:block}
+body.presenting .present-exit{display:flex}
+
+/* my reports */
+.mr-item{display:flex;align-items:center;justify-content:space-between;padding:9px 12px;background:var(--panel2);border:1px solid var(--border);border-radius:var(--r);margin-bottom:7px;gap:10px}
+.mr-left{display:flex;align-items:center;gap:10px;min-width:0}
+.mr-ico{font-size:16px;flex-shrink:0}
+.mr-cat{font-size:12px;font-weight:600;color:var(--t);font-family:var(--sy)}
+.mr-loc{font-size:10px;color:var(--t2);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:180px}
+.mr-right{display:flex;flex-direction:column;align-items:flex-end;gap:4px;flex-shrink:0}
+.mr-maps{font-family:var(--mo);font-size:9px;color:var(--teal);text-decoration:none}
+
+/* traffic toggle */
+.traffic-btn{position:absolute;top:80px;right:10px;z-index:500;background:var(--panel);border:1px solid var(--border);border-radius:7px;padding:6px 10px;font-size:10px;font-family:var(--sy);font-weight:700;color:var(--t);cursor:pointer;display:flex;align-items:center;gap:5px;transition:background .2s,border-color .2s,color .2s}
+.traffic-btn.on{background:var(--teal);border-color:var(--teal);color:#fff}
+
+/* webhook chip */
+.wh-chip{position:absolute;bottom:58px;right:14px;z-index:600;display:flex;align-items:center;gap:5px;background:rgba(10,8,24,.9);border:1px solid var(--border);border-radius:20px;padding:4px 12px}
+
+/* incident modal */
+.inc-modal{position:fixed;inset:0;background:rgba(0,0,0,.7);z-index:8000;display:flex;align-items:center;justify-content:center}
+.inc-card{background:var(--panel);border:1px solid var(--border2);border-radius:16px;padding:28px;width:100%;max-width:480px;position:relative;max-height:85vh;overflow-y:auto}
+.inc-close{position:absolute;top:14px;right:14px;background:var(--panel2);border:1px solid var(--border);border-radius:6px;padding:5px;cursor:pointer;color:var(--t2);display:flex;align-items:center;justify-content:center;transition:color .2s}
+.inc-close:hover{color:var(--t)}
+.inc-ico{font-size:36px;margin-bottom:12px}
+.inc-tk{font-family:var(--mo);font-size:11px;color:var(--teal);margin-bottom:4px}
+.inc-cat{font-family:var(--sy);font-size:20px;font-weight:800;margin-bottom:16px}
+.inc-row{display:flex;flex-direction:column;padding:9px 0;border-bottom:1px solid var(--border)}
+.inc-row:last-of-type{border-bottom:none}
+.inc-k{font-size:8px;letter-spacing:.12em;color:var(--t3);margin-bottom:4px;text-transform:uppercase;font-family:var(--sy)}
+.inc-v{font-size:13px;color:var(--t);line-height:1.5}
+.inc-resolve{width:100%;background:var(--gd);border:1px solid rgba(0,200,150,.3);border-radius:var(--r);padding:12px;font-family:var(--sy);font-size:12px;font-weight:700;letter-spacing:.08em;color:var(--green);cursor:pointer;margin-top:16px;transition:opacity .2s}
+.inc-resolve:hover{opacity:.8}
+.inc-resolve:disabled{opacity:.45;cursor:not-allowed}
+
+/* onboarding */
+.ob-overlay{position:fixed;inset:0;background:var(--bg);z-index:9999;display:flex;align-items:center;justify-content:center}
+.ob-content{text-align:center;max-width:480px;width:100%;padding:40px 24px}
+.ob-step{animation:fda .35s ease}
+.ob-pulse-wrap{width:64px;height:64px;border-radius:50%;background:var(--teal-dim);border:2px solid rgba(0,120,140,.3);display:flex;align-items:center;justify-content:center;margin:0 auto 20px;animation:ob-pulse 2s ease-in-out infinite}
+@keyframes ob-pulse{0%,100%{transform:scale(1);box-shadow:0 0 0 0 rgba(0,120,140,.3)}50%{transform:scale(1.06);box-shadow:0 0 0 14px rgba(0,120,140,0)}}
+.ob-title{font-family:var(--sy);font-size:26px;font-weight:800;color:#fff;margin-bottom:12px;line-height:1.2}
+.ob-title span{color:var(--teal)}
+.ob-sub{font-size:13px;color:var(--t2);line-height:1.7;margin-bottom:28px}
+.ob-btn{background:var(--teal);border:none;border-radius:var(--r);padding:13px 32px;font-family:var(--sy);font-size:13px;font-weight:800;letter-spacing:.1em;color:#fff;cursor:pointer;transition:opacity .2s}
+.ob-btn:hover{opacity:.88}
+.ob-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:28px}
+.ob-card{background:var(--panel);border:1px solid var(--border2);border-radius:var(--rl);padding:20px 12px;display:flex;flex-direction:column;align-items:center;gap:10px;font-size:11px;color:var(--t2);font-weight:500;line-height:1.4}
+.ob-card i[data-lucide]{width:28px;height:28px;color:var(--teal);margin:0 auto 0}
+.ob-dots{display:flex;justify-content:center;gap:8px;margin-top:28px}
+.ob-dot{width:7px;height:7px;border-radius:50%;background:var(--border2);transition:background .2s}
+.ob-dot.on{background:var(--teal)}
 </style>
 </head>
 <body>
@@ -341,10 +407,12 @@ i[data-lucide]{width:20px;height:20px;stroke:currentColor;display:block;margin:0
   <div class="nav-right">
     <div class="nav-reg">Southeast USA</div>
     <div class="live-chip"><div class="ldot"></div><span class="ltxt">LIVE</span></div>
+    <button class="present-btn" onclick="enterPresent()">Present</button>
     <div class="nav-clk" id="clock">--:--:-- --</div>
     <div class="user-chip" id="user-chip" style="display:none">
       <div class="user-av" id="user-av">?</div>
       <span class="user-em" id="user-em"></span>
+      <span class="role-badge" id="role-badge"></span>
       <button class="logout-btn" onclick="doSignOut()">SIGN OUT</button>
     </div>
   </div>
@@ -416,6 +484,11 @@ i[data-lucide]{width:20px;height:20px;stroke:currentColor;display:block;margin:0
         <span class="suc-lk d" onclick="goDash()">View Live Dashboard →</span>
       </div>
       <button class="rst-btn" onclick="resetForm()">Submit another report</button>
+    </div>
+
+    <div id="my-reports-section" style="display:none;margin-top:28px">
+      <div class="sec-t">My Recent Reports</div>
+      <div id="my-reports-list"><div style="font-size:11px;color:var(--t3)">Loading...</div></div>
     </div>
   </div>
 
@@ -499,6 +572,8 @@ i[data-lucide]{width:20px;height:20px;stroke:currentColor;display:block;margin:0
     </div>
     <div class="dmw">
       <div id="main-map"></div>
+      <button class="traffic-btn" id="traffic-btn" onclick="toggleTraffic()"><i data-lucide="traffic-cone" style="width:13px;height:13px;margin:0;display:inline-block"></i> Traffic</button>
+      <div class="wh-chip" id="wh-chip"><div class="ldot" style="background:var(--gray)"></div><span style="font-family:var(--sy);font-size:9px;font-weight:700;letter-spacing:.1em;color:var(--gray)">AWAITING SIGNAL</span></div>
       <div class="mab">
         <div class="mab-eye">AI Situation Brief · Updated now</div>
         <div class="mab-conf" id="mab-c">—<span>% confidence</span></div>
@@ -597,21 +672,34 @@ async function doAuth(){
     errEl.textContent='Account created — check your email to confirm, then sign in.';
     return;
   }
-  onAuthSuccess(res.data.session?.user||res.data.user);
+  onAuthSuccess(res.data.session?.user||res.data.user, authMode==='signup');
 }
 
 async function doSignOut(){
   await sb.auth.signOut();
 }
 
-function onAuthSuccess(user){
+function onAuthSuccess(user, isNewSignup=false){
   if(!user)return;
   currentUser=user;
+  currentUserId=user.id;
   document.getElementById('auth-overlay').style.display='none';
   const email=user.email||'';
   document.getElementById('user-av').textContent=email.charAt(0).toUpperCase();
   document.getElementById('user-em').textContent=email;
   document.getElementById('user-chip').style.display='flex';
+  // RBAC — role badge + tab visibility
+  const isOp=email.includes('admin')||email.includes('operator');
+  const rb=document.getElementById('role-badge');
+  if(rb){rb.textContent=isOp?'OPERATOR':'CITIZEN';rb.className='role-badge '+(isOp?'op':'ct');}
+  const dashTab=document.querySelectorAll('.ntab')[1];
+  if(dashTab)dashTab.style.display=isOp?'':'none';
+  // Onboarding vs normal load
+  if(isNewSignup&&!localStorage.getItem('civic_onboarded')){
+    startOnboarding();
+  } else {
+    loadMyReports();
+  }
 }
 
 // Check existing session on load, then watch for changes
@@ -625,17 +713,21 @@ sb.auth.onAuthStateChange((event,session)=>{
   if(event==='SIGNED_IN'&&session){
     onAuthSuccess(session.user);
   } else if(event==='SIGNED_OUT'){
-    currentUser=null;
+    currentUser=null;currentUserId=null;
     document.getElementById('user-chip').style.display='none';
     document.getElementById('auth-overlay').style.display='flex';
     document.getElementById('auth-email').value='';
     document.getElementById('auth-pw').value='';
     document.getElementById('auth-err').textContent='';
     document.getElementById('auth-err').style.color='#ff3d50';
+    document.getElementById('my-reports-section').style.display='none';
+    const dashTab=document.querySelectorAll('.ntab')[1];
+    if(dashTab)dashTab.style.display='';
   }
 });
 
 let allReports=[], selCat=null, miniMap=null, miniMarker=null, mainMap=null, curLat=null, curLng=null, addrT=null, activeFilter='all';
+let currentUserId=null, trafficOn=false, trafficLayer=null, lastInsertTime=null, modalReport=null;
 
 // clock
 function tick(){const n=new Date(),h=String(n.getHours()%12||12),m=String(n.getMinutes()).padStart(2,'0'),s=String(n.getSeconds()).padStart(2,'0'),ap=n.getHours()>=12?'PM':'AM';const e=document.getElementById('clock');if(e)e.textContent=`${h}:${m}:${s} ${ap}`;}
@@ -718,6 +810,7 @@ async function doSubmit(){
   const conf=Math.min(98,Math.floor(72+desc.length*.18+(urg==='HIGH'?12:0)));
   const tkId='CIVIC-'+Math.random().toString(36).substr(2,6).toUpperCase();
   const rec={ticket_id:tkId,category:selCat.cat,urgency:urg,description:desc,location_text:addr,lat,lng,geo_link:gl,provider:prov,phone,ai_confidence:conf,ai_reason:reasonFor(selCat.cat,prov),routed_to:routeFor(selCat.cat,urg),status:'open'};
+  if(currentUserId)rec.user_id=currentUserId;
   const{error}=await sb.from('reports').insert(rec);
   btn.disabled=false;btn.innerHTML='Submit Report to CIVIC →';
   if(error){alert('Supabase error — check your credentials:\n\n'+error.message);return;}
@@ -813,6 +906,7 @@ async function loadReports(){
 function subscribe(){
   sb.channel('civic').on('postgres_changes',{event:'INSERT',schema:'public',table:'reports'},p=>{
     const r=p.new;allReports.unshift(r);showToast(r);addPin(r);
+    lastInsertTime=Date.now();updateWebhookChip();
     renderFeed();renderIL();updateKPIs();updateAICard(r);renderPortalFeed();runSig('d');
     if(mainMap&&r.lat&&r.lng)mainMap.flyTo([r.lat,r.lng],11,{duration:1.8});
   }).subscribe();
@@ -845,7 +939,7 @@ function renderIL(){
   const el=document.getElementById('il');if(!el)return;
   const rows=getFilteredReports().slice(0,10);
   el.innerHTML='<div class="il-t">Active Incidents</div>'+rows.map(r=>`
-    <div class="ili" onclick='setActiveIli(this);updateAICard(${JSON.stringify(r).replace(/'/g,"&#39;")})'>
+    <div class="ili" onclick='setActiveIli(this);updateAICard(${JSON.stringify(r).replace(/'/g,"&#39;")});showIncidentModal(${JSON.stringify(r).replace(/'/g,"&#39;")})'>
       <div class="ili-dot" style="background:${cCol(r.category)}"></div>
       <div class="ili-b"><div class="ili-ty">${cIco(r.category)} ${r.category}</div><div class="ili-lo">${r.location_text||'—'}</div></div>
       <div class="ili-r"><span class="ili-ba ${bClass(r)}">${r.urgency}</span><span class="ili-tk">${(r.ticket_id||'').slice(-6)}</span></div>
@@ -915,9 +1009,180 @@ function showToast(r){const col=r.urgency==='HIGH'?'#ff3d50':r.urgency==='MED'?'
 
 document.querySelector('.ph-url').innerHTML='<div class="udot"></div><span>'+window.location.host+'/report</span>';
 
+// ── LOAD MY REPORTS ──
+async function loadMyReports(){
+  if(!currentUserId)return;
+  const sec=document.getElementById('my-reports-section');
+  if(!sec)return;
+  sec.style.display='block';
+  const el=document.getElementById('my-reports-list');
+  const{data,error}=await sb.from('reports').select('*').eq('user_id',currentUserId).order('created_at',{ascending:false}).limit(5);
+  if(error||!data||!data.length){el.innerHTML='<div style="font-size:11px;color:var(--t3);padding:8px 0">No reports yet.</div>';return;}
+  el.innerHTML=data.map(r=>`
+    <div class="mr-item">
+      <div class="mr-left"><span class="mr-ico">${cIco(r.category)}</span><div><div class="mr-cat">${r.category}</div><div class="mr-loc">${r.location_text||'—'}</div></div></div>
+      <div class="mr-right"><span class="ili-ba ${bClass(r)}">${r.urgency}</span><a class="mr-maps" href="${r.geo_link||'#'}" target="_blank">Maps ↗</a></div>
+    </div>`).join('');
+}
+
+// ── TRAFFIC TOGGLE ──
+function toggleTraffic(){
+  const btn=document.getElementById('traffic-btn');
+  if(!mainMap)return;
+  if(trafficOn){
+    if(trafficLayer){mainMap.removeLayer(trafficLayer);trafficLayer=null;}
+    trafficOn=false;if(btn)btn.classList.remove('on');
+  } else {
+    trafficLayer=L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png',{opacity:0.4,attribution:'© OSM'}).addTo(mainMap);
+    trafficOn=true;if(btn)btn.classList.add('on');
+  }
+}
+
+// ── PRESENTATION MODE ──
+function enterPresent(){
+  showPage('dashboard',document.querySelectorAll('.ntab')[1]);
+  document.body.classList.add('presenting');
+  if(!mainMap)initDash();else setTimeout(()=>mainMap.invalidateSize(),80);
+}
+function exitPresent(){
+  document.body.classList.remove('presenting');
+  setTimeout(()=>{if(mainMap)mainMap.invalidateSize();},80);
+}
+
+// ── INCIDENT MODAL ──
+function showIncidentModal(r){
+  if(typeof r==='string')try{r=JSON.parse(r);}catch{return;}
+  modalReport=r;
+  const col=cCol(r.category),conf=r.ai_confidence||0;
+  const ts=r.created_at?new Date(r.created_at).toLocaleDateString('en-US',{month:'long',day:'numeric',year:'numeric'})+' at '+new Date(r.created_at).toLocaleTimeString('en-US',{hour:'numeric',minute:'2-digit'}):'—';
+  document.getElementById('inc-content').innerHTML=`
+    <div class="inc-ico">${cIco(r.category)}</div>
+    <div class="inc-tk">${r.ticket_id||'—'}</div>
+    <div class="inc-cat" style="color:${col}">${r.category}</div>
+    <div class="inc-row"><div class="inc-k">Description</div><div class="inc-v">${r.description||'—'}</div></div>
+    <div class="inc-row"><div class="inc-k">Location</div><div class="inc-v"><a href="${r.geo_link||'#'}" target="_blank" style="color:var(--teal);text-decoration:none">${r.location_text||'—'} ↗</a></div></div>
+    ${r.provider?`<div class="inc-row"><div class="inc-k">Provider</div><div class="inc-v">${r.provider}</div></div>`:''}
+    <div class="inc-row"><div class="inc-k">Urgency</div><div class="inc-v" style="color:${uCol(r.urgency)};font-weight:700">${r.urgency}</div></div>
+    <div class="inc-row"><div class="inc-k">AI Reasoning</div><div class="inc-v" style="font-style:italic;color:var(--t2)">${r.ai_reason||'—'}</div></div>
+    <div class="inc-row"><div class="inc-k">AI Confidence</div><div class="inc-v">
+      <div style="display:flex;align-items:center;gap:10px">
+        <div style="flex:1;height:5px;background:var(--border);border-radius:3px;overflow:hidden"><div style="height:100%;width:${conf}%;background:${conf>=88?'#00c896':conf>=72?'#f5c518':'#ff3d50'};border-radius:3px;transition:width .8s ease"></div></div>
+        <span style="font-family:var(--mo);font-size:11px;color:var(--teal)">${conf}%</span>
+      </div>
+    </div></div>
+    <div class="inc-row"><div class="inc-k">Routed To</div><div class="inc-v" style="color:${col}">${r.routed_to||'—'}</div></div>
+    <div class="inc-row"><div class="inc-k">Submitted</div><div class="inc-v">${ts}</div></div>
+    <button class="inc-resolve" id="inc-resolve-btn" onclick="markResolved()">✓ Mark Resolved</button>
+  `;
+  document.getElementById('inc-modal').style.display='flex';
+  lucide.createIcons();
+}
+function closeIncidentModal(){document.getElementById('inc-modal').style.display='none';modalReport=null;}
+async function markResolved(){
+  if(!modalReport)return;
+  const btn=document.getElementById('inc-resolve-btn');
+  btn.disabled=true;btn.textContent='Resolving...';
+  const{error}=await sb.from('reports').update({status:'resolved'}).eq('id',modalReport.id);
+  if(error){btn.disabled=false;btn.textContent='✓ Mark Resolved';alert('Error: '+error.message);return;}
+  btn.textContent='Resolved ✓';
+  setTimeout(()=>closeIncidentModal(),900);
+}
+
+// ── ONBOARDING ──
+function startOnboarding(){
+  const ob=document.getElementById('ob-overlay');
+  ob.style.display='flex';
+  obStep(1);
+  const nameEl=document.getElementById('ob-name');
+  if(nameEl)nameEl.textContent=currentUser?.email?.charAt(0).toUpperCase()||'—';
+  lucide.createIcons();
+}
+function obStep(n){
+  [1,2,3].forEach(i=>{
+    const s=document.getElementById('ob-step-'+i);
+    const d=document.getElementById('ob-dot-'+i);
+    if(s)s.style.display=i===n?'block':'none';
+    if(d)d.classList.toggle('on',i===n);
+  });
+}
+function finishOnboarding(){
+  localStorage.setItem('civic_onboarded','true');
+  document.getElementById('ob-overlay').style.display='none';
+  loadMyReports();
+}
+
+// ── WEBHOOK STATUS ──
+function updateWebhookChip(){
+  const el=document.getElementById('wh-chip');if(!el)return;
+  if(!lastInsertTime){
+    el.innerHTML='<div class="ldot" style="background:var(--gray)"></div><span style="font-family:var(--sy);font-size:9px;font-weight:700;letter-spacing:.1em;color:var(--gray)">AWAITING SIGNAL</span>';return;
+  }
+  const age=Date.now()-lastInsertTime;
+  if(age<5*60*1000){
+    el.innerHTML='<div class="ldot"></div><span style="font-family:var(--sy);font-size:9px;font-weight:700;letter-spacing:.1em;color:var(--green)">WEBHOOK ACTIVE</span>';
+  } else {
+    el.innerHTML='<div class="ldot" style="background:var(--yellow)"></div><span style="font-family:var(--sy);font-size:9px;font-weight:700;letter-spacing:.1em;color:var(--yellow)">WEBHOOK IDLE</span>';
+  }
+}
+setInterval(updateWebhookChip,30000);
+
+// ── GLOBAL KEY HANDLER ──
+document.addEventListener('keydown',e=>{
+  if(e.key==='Escape'){
+    const mo=document.getElementById('inc-modal');
+    if(mo&&mo.style.display==='flex'){closeIncidentModal();return;}
+    if(document.body.classList.contains('presenting'))exitPresent();
+  }
+});
+
 lucide.createIcons();
 </script>
 <div id="toasts" style="position:fixed;bottom:24px;right:24px;z-index:9999;display:flex;flex-direction:column;gap:8px;pointer-events:none"></div>
+
+<!-- PRESENT MODE ELEMENTS -->
+<div class="present-wm">CIVIC — Live Demo</div>
+<button class="present-exit" id="present-exit" onclick="exitPresent()"><i data-lucide="x" style="width:13px;height:13px;margin:0;display:inline-block"></i> Exit Presentation</button>
+
+<!-- INCIDENT DETAIL MODAL -->
+<div id="inc-modal" class="inc-modal" style="display:none" onclick="if(event.target===this)closeIncidentModal()">
+  <div class="inc-card">
+    <button class="inc-close" onclick="closeIncidentModal()"><i data-lucide="x" style="width:14px;height:14px;margin:0;display:block"></i></button>
+    <div id="inc-content"></div>
+  </div>
+</div>
+
+<!-- ONBOARDING OVERLAY -->
+<div id="ob-overlay" class="ob-overlay" style="display:none">
+  <div class="ob-content">
+    <div id="ob-step-1" class="ob-step">
+      <div class="ob-pulse-wrap">
+        <svg width="24" height="24" viewBox="0 0 18 18" fill="none"><path d="M2 14L5 8L7.5 11.5L10 4L12.5 9L15 6.5L17 10.5" stroke="#00788C" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><circle cx="10" cy="4" r="1.8" fill="#00788C"/></svg>
+      </div>
+      <div class="ob-title">Welcome to CIVIC, <span id="ob-name">—</span></div>
+      <div class="ob-sub">Your reports reach city teams in seconds.</div>
+      <button class="ob-btn" onclick="obStep(2)">Get Started →</button>
+    </div>
+    <div id="ob-step-2" class="ob-step" style="display:none">
+      <div class="ob-title">How it works</div>
+      <div class="ob-cards">
+        <div class="ob-card"><i data-lucide="smartphone"></i>Text or submit online</div>
+        <div class="ob-card"><i data-lucide="cpu"></i>AI classifies your report</div>
+        <div class="ob-card"><i data-lucide="building-2"></i>City team is notified</div>
+      </div>
+      <button class="ob-btn" onclick="obStep(3)">Next →</button>
+    </div>
+    <div id="ob-step-3" class="ob-step" style="display:none">
+      <div class="ob-title">Your neighborhood<br>needs you.</div>
+      <div class="ob-sub">Report a pothole, outage, or any city issue below.</div>
+      <button class="ob-btn" onclick="finishOnboarding()">Start Reporting →</button>
+    </div>
+    <div class="ob-dots">
+      <div class="ob-dot on" id="ob-dot-1"></div>
+      <div class="ob-dot" id="ob-dot-2"></div>
+      <div class="ob-dot" id="ob-dot-3"></div>
+    </div>
+  </div>
+</div>
 
 <!-- ═══ AUTH OVERLAY ═══ -->
 <div id="auth-overlay" class="auth-overlay">
