@@ -622,6 +622,153 @@ body.presenting .present-exit{display:flex}
 .cc-conf{font-family:var(--mo);font-size:9px;color:var(--text3)}
 .cc-maps{font-family:var(--mo);font-size:9px;color:var(--teal);text-decoration:none}
 .cc-maps:hover{text-decoration:underline}
+
+/* ══ PDF RECEIPT BUTTON ══ */
+.pdf-btn{display:inline-flex;align-items:center;gap:7px;padding:10px 20px;background:var(--purple-dim);border:1px solid rgba(29,17,96,0.4);border-radius:8px;font-family:var(--sy);font-size:12px;font-weight:700;letter-spacing:.08em;color:var(--text);cursor:pointer;transition:all .2s;margin-top:8px}
+.pdf-btn:hover{background:var(--teal-dim);border-color:rgba(0,120,140,0.4);color:var(--teal)}
+.suc-sms{font-size:11px;color:var(--text2);background:var(--panel3);border:1px solid var(--border);border-radius:6px;padding:8px 12px;margin-top:8px;line-height:1.6}
+
+/* ══ MEDIA UPLOAD ══ */
+.media-drop-zone{border:2px dashed var(--border2);border-radius:var(--r);padding:24px 16px;text-align:center;cursor:pointer;transition:all .2s;background:var(--panel3)}
+.media-drop-zone:hover{border-color:var(--teal);background:var(--teal-faint)}
+.mdz-icon{font-size:28px;margin-bottom:8px}
+.mdz-text{font-size:13px;color:var(--text2);font-weight:500;margin-bottom:4px}
+.mdz-sub{font-size:10px;color:var(--text3);font-family:var(--mo);letter-spacing:.04em}
+.media-preview{display:flex;align-items:center;gap:12px;background:var(--panel2);border:1px solid var(--border);border-radius:var(--r);padding:10px 12px;margin-top:8px}
+.mp-thumb{width:48px;height:48px;border-radius:6px;background:var(--panel3);overflow:hidden;flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:22px}
+.mp-thumb img,.mp-thumb video{width:100%;height:100%;object-fit:cover}
+.mp-info{flex:1;min-width:0}
+.mp-name{font-size:12px;font-weight:600;color:var(--text);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;margin-bottom:3px}
+.mp-size{font-size:10px;color:var(--text3);font-family:var(--mo)}
+.mp-remove{font-size:10px;color:var(--red);background:var(--red-d);border:1px solid rgba(255,61,80,0.2);border-radius:4px;padding:3px 8px;cursor:pointer;margin-top:4px;font-family:var(--sy);font-weight:700;letter-spacing:.04em}
+
+/* ══ CAT ICON WRAP ══ */
+.cat-icon-wrap{display:flex;align-items:center;justify-content:center;width:44px;height:44px;border-radius:10px;margin:0 auto 8px;background:var(--panel3);box-shadow:var(--shadow-card);transition:all .2s}
+.cat-icon-wrap i[data-lucide]{margin:0;width:22px;height:22px}
+.cat-p.sel .cat-icon-wrap{background:rgba(0,120,140,0.2);box-shadow:var(--shadow-card),0 0 10px rgba(0,120,140,0.2)}
+.cat-p i[data-lucide]{color:var(--text2)}
+.cat-p.sel i[data-lucide]{color:var(--teal)}
+
+/* ══ LANDING PAGES ══ */
+.landing-page{position:fixed;inset:0;background:var(--bg);z-index:9998;overflow-y:auto;padding-top:64px}
+.lp-hero{max-width:800px;margin:0 auto;padding:60px 24px 40px;text-align:center}
+.lp-back{display:inline-flex;align-items:center;gap:6px;font-family:var(--sy);font-size:12px;font-weight:700;letter-spacing:.08em;color:var(--text2);cursor:pointer;margin-bottom:24px;padding:7px 14px;background:var(--panel2);border:1px solid var(--border);border-radius:7px;transition:all .2s}
+.lp-back:hover{color:var(--teal);border-color:rgba(0,120,140,0.3)}
+.lp-h1{font-family:var(--sy);font-size:42px;font-weight:800;color:#fff;letter-spacing:-.02em;margin-bottom:14px}
+.lp-h1 span{color:var(--teal)}
+.lp-sub{font-size:16px;color:var(--text2);line-height:1.7}
+.lp-grid{max-width:1000px;margin:0 auto;padding:0 24px 80px;display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.lp-card{background:var(--panel2);border:1px solid var(--border);border-radius:var(--rl);padding:24px 20px;box-shadow:var(--shadow-card);transition:all .25s}
+.lp-card:hover{border-color:rgba(0,120,140,0.3);transform:translateY(-3px);box-shadow:var(--shadow-float)}
+.lp-card-icon{font-size:28px;margin-bottom:12px}
+.lp-card h3{font-family:var(--sy);font-size:15px;font-weight:700;color:#fff;margin-bottom:8px}
+.lp-card p{font-size:12px;color:var(--text2);line-height:1.65}
+.lp-steps{max-width:900px;margin:0 auto;padding:0 24px 80px;display:flex;align-items:flex-start;gap:0;flex-wrap:wrap}
+.lp-step{flex:1;min-width:140px;background:var(--panel2);border:1px solid var(--border);border-radius:var(--rl);padding:20px 16px;box-shadow:var(--shadow-card);text-align:center}
+.lp-step-num{font-family:var(--mo);font-size:28px;font-weight:700;color:var(--teal);margin-bottom:10px;letter-spacing:-.02em}
+.lp-step h3{font-family:var(--sy);font-size:13px;font-weight:700;color:#fff;margin-bottom:8px}
+.lp-step p{font-size:11px;color:var(--text2);line-height:1.6}
+.lp-step-line{width:24px;height:2px;background:var(--teal);opacity:0.4;margin-top:40px;flex-shrink:0}
+.lp-tech-grid{max-width:1000px;margin:0 auto;padding:0 24px 80px;display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.lp-tech-card{background:var(--panel2);border:1px solid var(--border);border-radius:var(--rl);padding:22px 18px;box-shadow:var(--shadow-card);transition:all .25s}
+.lp-tech-card:hover{border-color:rgba(0,120,140,0.3);transform:translateY(-2px)}
+.ltc-logo{font-size:26px;margin-bottom:10px}
+.ltc-name{font-family:var(--sy);font-size:15px;font-weight:700;color:#fff;margin-bottom:8px}
+.ltc-desc{font-size:12px;color:var(--text2);line-height:1.6;margin-bottom:12px}
+.ltc-badge{display:inline-block;font-family:var(--mo);font-size:9px;letter-spacing:.1em;text-transform:uppercase;padding:3px 9px;border-radius:4px;background:var(--teal-dim);color:var(--teal);border:1px solid rgba(0,120,140,0.3)}
+.lp-contact-grid{max-width:800px;margin:0 auto;padding:0 24px 40px;display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+.lp-contact-card{background:var(--panel2);border:1px solid var(--border);border-radius:var(--rl);padding:24px;text-align:center;box-shadow:var(--shadow-card)}
+.lcc-icon{font-size:32px;margin-bottom:12px}
+.lcc-label{font-family:var(--mo);font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:var(--text3);margin-bottom:6px}
+.lcc-val{font-family:var(--sy);font-size:16px;font-weight:700;color:var(--teal);margin-bottom:4px}
+.lcc-sub{font-size:11px;color:var(--text2)}
+.lp-social{max-width:800px;margin:0 auto;padding:0 24px 80px;text-align:center}
+.lp-social-title{font-family:var(--sy);font-size:14px;font-weight:700;color:var(--text2);margin-bottom:20px;letter-spacing:.06em}
+.lp-social-row{display:flex;align-items:center;justify-content:center;gap:12px;flex-wrap:wrap}
+.lp-social-btn{display:inline-flex;align-items:center;gap:8px;padding:12px 24px;border-radius:10px;font-family:var(--sy);font-size:13px;font-weight:700;text-decoration:none;transition:all .2s;border:1px solid}
+.lp-social-btn.ig{background:rgba(225,48,108,0.1);color:#e1306c;border-color:rgba(225,48,108,0.3)}
+.lp-social-btn.fb{background:rgba(24,119,242,0.1);color:#1877f2;border-color:rgba(24,119,242,0.3)}
+.lp-social-btn.x{background:rgba(255,255,255,0.06);color:var(--text);border-color:var(--border2)}
+.lp-social-btn:hover{transform:translateY(-2px);filter:brightness(1.1)}
+@media(max-width:768px){.lp-grid,.lp-tech-grid{grid-template-columns:1fr}.lp-contact-grid{grid-template-columns:1fr}.lp-steps{flex-direction:column}.lp-step-line{width:2px;height:20px;margin:0 auto}.lp-h1{font-size:28px}}
+
+/* ══ SOCIAL ICONS ══ */
+.sf-social{display:flex;align-items:center;gap:8px}
+.sf-social-ic{width:32px;height:32px;border-radius:8px;background:var(--panel2);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;color:var(--text2);text-decoration:none;transition:all .2s}
+.sf-social-ic:hover{background:var(--teal-dim);border-color:rgba(0,120,140,0.3);color:var(--teal);transform:translateY(-2px)}
+.nav-social{display:flex;align-items:center;gap:4px}
+.nav-social-ic{width:28px;height:28px;border-radius:6px;display:flex;align-items:center;justify-content:center;color:var(--text3);text-decoration:none;transition:all .2s;background:transparent}
+.nav-social-ic:hover{color:var(--teal);background:var(--teal-faint)}
+@media(max-width:768px){.nav-social{display:none}}
+
+/* ══ THEME TOGGLE ══ */
+.theme-toggle{width:32px;height:32px;border-radius:7px;background:var(--panel2);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;color:var(--text2);cursor:pointer;transition:all .2s}
+.theme-toggle:hover{background:var(--teal-faint);border-color:rgba(0,120,140,0.3);color:var(--teal)}
+body.light-mode{--bg:#f0f2f8;--panel:#ffffff;--panel2:#f5f7fc;--panel3:#eaecf5;--border:rgba(29,17,96,0.12);--border2:rgba(29,17,96,0.2);--text:#1a1a2e;--text2:#4a5280;--text3:#8890b0;--shadow-card:4px 4px 12px rgba(29,17,96,0.08),-2px -2px 8px rgba(255,255,255,0.8);--shadow-float:8px 8px 20px rgba(29,17,96,0.12),-4px -4px 12px rgba(255,255,255,0.9);--shadow-recessed:inset 3px 3px 8px rgba(29,17,96,0.08),inset -2px -2px 5px rgba(255,255,255,0.7)}
+body.light-mode .leaflet-tile-pane{filter:brightness(1) saturate(0.8)}
+body.light-mode .nav{background:linear-gradient(135deg,#1D1160 0%,#2d1d8a 100%)}
+body.light-mode .nav-word,body.light-mode .ntab.on,body.light-mode .ltxt{color:#ffffff}
+
+/* ══ HELP TOOLTIPS ══ */
+.help-tooltip-wrap{position:relative;display:inline-flex;align-items:center}
+.help-icon{display:inline-flex;align-items:center;justify-content:center;width:14px;height:14px;border-radius:50%;background:var(--panel3);border:1px solid var(--border2);font-size:8px;font-weight:700;color:var(--text3);cursor:help;margin-left:4px;font-family:var(--mo);letter-spacing:0;flex-shrink:0}
+.help-icon:hover{background:var(--teal-dim);border-color:rgba(0,120,140,0.3);color:var(--teal)}
+.help-tip{position:absolute;bottom:calc(100% + 6px);left:50%;transform:translateX(-50%);background:var(--panel3);border:1px solid var(--border2);border-radius:8px;padding:8px 12px;font-size:11px;color:var(--text2);line-height:1.55;width:220px;z-index:9000;box-shadow:var(--shadow-float);display:none}
+.help-tip::after{content:'';position:absolute;top:100%;left:50%;transform:translateX(-50%);border:5px solid transparent;border-top-color:var(--border2)}
+
+/* ══ GLOSSARY ══ */
+.glossary-btn{font-family:var(--mo);font-size:9px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;background:var(--panel3);border:1px solid var(--border);border-radius:5px;padding:4px 10px;color:var(--text3);cursor:pointer;transition:all .2s}
+.glossary-btn:hover{color:var(--teal);border-color:rgba(0,120,140,0.3)}
+.glossary-modal{position:fixed;inset:0;z-index:8000;display:flex;align-items:center;justify-content:center}
+.gm-backdrop{position:absolute;inset:0;background:rgba(0,0,0,0.6);backdrop-filter:blur(3px)}
+.gm-card{position:relative;width:100%;max-width:520px;max-height:80vh;background:var(--panel2);border:1px solid var(--border2);border-radius:16px;box-shadow:var(--shadow-float);display:flex;flex-direction:column;margin:16px}
+.gm-header{display:flex;align-items:center;justify-content:space-between;padding:16px 20px;border-bottom:1px solid var(--border);flex-shrink:0}
+.gm-title{font-family:var(--sy);font-size:14px;font-weight:700;color:var(--teal);letter-spacing:.06em}
+.gm-close{background:transparent;border:1px solid var(--border);border-radius:6px;width:28px;height:28px;color:var(--text2);cursor:pointer;font-size:11px}
+.gm-body{overflow-y:auto;padding:16px 20px;flex:1}
+.gm-term{padding:12px 0;border-bottom:1px solid var(--border)}
+.gm-term:last-child{border-bottom:none}
+.gm-term-name{font-family:var(--sy);font-size:12px;font-weight:700;color:#fff;margin-bottom:5px}
+.gm-term-def{font-size:12px;color:var(--text2);line-height:1.6}
+
+/* ══ MY REPORTS ENHANCED ══ */
+.my-report-item{display:flex;align-items:center;justify-content:space-between;padding:10px 0;border-bottom:1px solid var(--border);gap:10px}
+.my-report-item:last-child{border-bottom:none}
+.mri-left{display:flex;align-items:center;gap:8px;flex:1;min-width:0}
+.mri-badge{font-size:8px!important;padding:2px 5px!important;flex-shrink:0}
+.mri-type{font-size:12px;font-weight:600;color:var(--text);margin-bottom:2px}
+.mri-loc{font-size:10px;color:var(--text2);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:200px}
+.mri-right{display:flex;align-items:center;gap:8px;flex-shrink:0}
+.mri-ticket{font-family:var(--mo);font-size:9px;color:var(--text3)}
+.mri-status{font-size:9px;font-weight:700;font-family:var(--sy)}
+.mri-status.open{color:var(--yellow)}
+.mri-status.resolved{color:var(--green)}
+.mri-maps{font-family:var(--mo);font-size:9px;color:var(--teal);text-decoration:none}
+.no-reports{font-size:12px;color:var(--text3);text-align:center;padding:20px 0}
+
+/* ══ COMMUNITY FEED ══ */
+.community-feed{background:var(--panel2);border:1px solid var(--border);border-radius:var(--rl);overflow:hidden;margin-top:20px;box-shadow:var(--shadow-card)}
+.cf-header{display:flex;align-items:center;justify-content:space-between;padding:12px 16px;border-bottom:1px solid var(--border);background:var(--panel3)}
+.cf-title{display:flex;align-items:center;gap:8px;font-family:var(--sy);font-size:10px;font-weight:700;letter-spacing:.1em;color:var(--text2);text-transform:uppercase}
+.cf-dot{width:7px;height:7px;border-radius:50%;background:var(--green);box-shadow:0 0 6px rgba(0,200,150,0.6);animation:ledpulse 2s ease-in-out infinite}
+.cf-count{font-family:var(--mo);font-size:9px;color:var(--teal)}
+.cf-items{max-height:280px;overflow-y:auto}
+.cf-item{display:flex;align-items:flex-start;gap:10px;padding:10px 16px;border-bottom:1px solid var(--border);transition:background .15s;animation:feeder .3s ease}
+.cf-item:last-child{border-bottom:none}
+.cf-item:hover{background:var(--purple-faint)}
+.cf-item.fresh{background:rgba(0,120,140,0.05)}
+.cf-item-icon{width:32px;height:32px;border-radius:7px;display:flex;align-items:center;justify-content:center;font-size:14px;flex-shrink:0;background:var(--panel3)}
+.cf-item-body{flex:1;min-width:0}
+.cf-item-type{font-size:11px;font-weight:700;color:var(--text);margin-bottom:2px;display:flex;align-items:center;gap:6px}
+.cf-item-loc{font-size:10px;color:var(--text2);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.cf-item-time{font-family:var(--mo);font-size:9px;color:var(--text3);flex-shrink:0}
+.cf-loading{padding:20px;text-align:center;font-size:12px;color:var(--text3)}
+
+/* ══ FOOTER LAYOUT FIX ══ */
+.sf-inner{max-width:1100px;margin:0 auto;padding:40px 32px 28px}
+.sf-top{display:grid;grid-template-columns:260px 1fr;gap:48px;margin-bottom:32px}
+.sf-links-col{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.sf-bottom{border-top:1px solid var(--border);padding-top:20px;display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap}
 </style>
 </head>
 <body>
@@ -643,6 +790,12 @@ body.presenting .present-exit{display:flex}
     <button class="ntab" onclick="showPage('dashboard',this)">Operator Dashboard</button>
   </div>
   <div class="nav-right">
+    <div class="nav-social">
+      <a class="nav-social-ic" href="https://instagram.com" target="_blank"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/></svg></a>
+      <a class="nav-social-ic" href="https://facebook.com" target="_blank"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
+      <a class="nav-social-ic" href="https://x.com" target="_blank"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+    </div>
+    <button class="theme-toggle" onclick="toggleTheme()" title="Toggle light/dark mode"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg></button>
     <div class="nav-reg">Southeast USA</div>
     <div class="live-chip"><div class="ldot"></div><span class="ltxt">LIVE</span></div>
     <button class="present-btn" onclick="enterPresent()">Present</button>
@@ -702,12 +855,12 @@ body.presenting .present-exit{display:flex}
 
       <div class="sec-t">Issue Category *</div>
       <div class="cat-grid">
-        <div class="cat-p" id="cat-POTHOLE" onclick="pickCat('POTHOLE','Road / Pothole','#ff3d50','⚠️')"><span class="cat-ic"><i data-lucide="alert-triangle"></i></span><div class="cat-nm">Pothole / Road Hazard</div></div>
-        <div class="cat-p" id="cat-GRAFFITI" onclick="pickCat('GRAFFITI','Graffiti','#00788C','🎨')"><span class="cat-ic"><i data-lucide="paintbrush"></i></span><div class="cat-nm">Graffiti / Vandalism</div></div>
-        <div class="cat-p" id="cat-DEBRIS" onclick="pickCat('DEBRIS','Debris','#f5c518','🗑️')"><span class="cat-ic"><i data-lucide="trash-2"></i></span><div class="cat-nm">Debris / Obstruction</div></div>
-        <div class="cat-p" id="cat-OUTAGE" onclick="pickCat('OUTAGE','Internet/Cable Outage','#00788C','📡')"><span class="cat-ic"><i data-lucide="wifi-off"></i></span><div class="cat-nm">Internet / Cable Outage</div></div>
-        <div class="cat-p" id="cat-UTILITY" onclick="pickCat('UTILITY','Power / Utility','#fb923c','⚡')"><span class="cat-ic"><i data-lucide="zap"></i></span><div class="cat-nm">Power / Water / Utility</div></div>
-        <div class="cat-p" id="cat-STREETLIGHT" onclick="pickCat('STREETLIGHT','Streetlight Out','#f5c518','💡')"><span class="cat-ic"><i data-lucide="lightbulb"></i></span><div class="cat-nm">Streetlight Out</div></div>
+        <div class="cat-p" id="cat-POTHOLE" onclick="pickCat('POTHOLE','Road / Pothole','#ff3d50','⚠️')"><div class="cat-icon-wrap"><i data-lucide="alert-triangle" style="width:22px;height:22px;stroke:currentColor"></i></div><div class="cat-nm">Pothole / Road Hazard</div></div>
+        <div class="cat-p" id="cat-GRAFFITI" onclick="pickCat('GRAFFITI','Graffiti','#00788C','🎨')"><div class="cat-icon-wrap"><i data-lucide="paintbrush" style="width:22px;height:22px;stroke:currentColor"></i></div><div class="cat-nm">Graffiti / Vandalism</div></div>
+        <div class="cat-p" id="cat-DEBRIS" onclick="pickCat('DEBRIS','Debris','#f5c518','🗑️')"><div class="cat-icon-wrap"><i data-lucide="trash-2" style="width:22px;height:22px;stroke:currentColor"></i></div><div class="cat-nm">Debris / Obstruction</div></div>
+        <div class="cat-p" id="cat-OUTAGE" onclick="pickCat('OUTAGE','Internet/Cable Outage','#00788C','📡')"><div class="cat-icon-wrap"><i data-lucide="wifi-off" style="width:22px;height:22px;stroke:currentColor"></i></div><div class="cat-nm">Internet / Cable Outage</div></div>
+        <div class="cat-p" id="cat-UTILITY" onclick="pickCat('UTILITY','Power / Utility','#fb923c','⚡')"><div class="cat-icon-wrap"><i data-lucide="zap" style="width:22px;height:22px;stroke:currentColor"></i></div><div class="cat-nm">Power / Water / Utility</div></div>
+        <div class="cat-p" id="cat-STREETLIGHT" onclick="pickCat('STREETLIGHT','Streetlight Out','#f5c518','💡')"><div class="cat-icon-wrap"><i data-lucide="lightbulb" style="width:22px;height:22px;stroke:currentColor"></i></div><div class="cat-nm">Streetlight Out</div></div>
       </div>
 
       <div id="prov-row" style="display:none;margin-bottom:16px">
@@ -737,6 +890,24 @@ body.presenting .present-exit{display:flex}
         </div>
       </div>
 
+      <div class="fr" id="media-upload-row">
+        <div class="fl">Attach Photo or Video (optional)</div>
+        <div class="media-drop-zone" id="media-drop" onclick="document.getElementById('media-file').click()" ondragover="event.preventDefault()" ondrop="handleMediaDrop(event)">
+          <input type="file" id="media-file" accept="image/*,video/*" onchange="handleMediaFile(this.files[0])" style="display:none">
+          <div class="mdz-icon">📎</div>
+          <div class="mdz-text">Drop photo or video here, or tap to browse</div>
+          <div class="mdz-sub">JPG, PNG, MP4, MOV up to 25MB</div>
+        </div>
+        <div class="media-preview" id="media-preview" style="display:none">
+          <div class="mp-thumb" id="mp-thumb"></div>
+          <div class="mp-info">
+            <div class="mp-name" id="mp-name">—</div>
+            <div class="mp-size" id="mp-size">—</div>
+            <button class="mp-remove" onclick="removeMedia()">✕ Remove</button>
+          </div>
+        </div>
+      </div>
+
       <div class="fr">
         <div class="fl">Description <span class="req">*</span></div>
         <textarea class="fta" id="inp-desc" placeholder="Describe the issue in detail — how long it's been happening, who's affected, any safety risks. The AI uses your description to score urgency and route the ticket." oninput="onDesc(this)"></textarea>
@@ -744,6 +915,16 @@ body.presenting .present-exit{display:flex}
       </div>
 
       <button class="sub-btn" id="sub-btn" onclick="doSubmit()">Submit Report to CIVIC →</button>
+
+      <div class="community-feed" id="community-feed">
+        <div class="cf-header">
+          <div class="cf-title"><div class="cf-dot"></div>Community Feed — Live Reports</div>
+          <span class="cf-count" id="cf-count">0 reports</span>
+        </div>
+        <div class="cf-items" id="cf-items">
+          <div class="cf-loading">Loading community reports...</div>
+        </div>
+      </div>
     </div>
 
     <div class="suc" id="suc">
@@ -755,6 +936,8 @@ body.presenting .present-exit{display:flex}
         <a class="suc-lk m" id="suc-ml" href="#" target="_blank">📍 View on Google Maps</a>
         <span class="suc-lk d" onclick="goDash()">View Live Dashboard →</span>
       </div>
+      <button class="pdf-btn" onclick="downloadReceipt()">⬇ Download PDF Receipt</button>
+      <div class="suc-sms" id="suc-sms"></div>
       <button class="rst-btn" onclick="resetForm()">Submit another report</button>
     </div>
 
@@ -780,7 +963,7 @@ body.presenting .present-exit{display:flex}
       <div class="ab-r"><div class="ab-k">Urgency</div><div class="ab-v" id="p-urg" style="color:var(--t2)">—</div></div>
       <div class="ab-r"><div class="ab-k">AI Reasoning</div><div class="ab-m" id="p-reason">Fill in your description and the AI will analyze urgency and routing live.</div></div>
       <div class="cfr">
-        <div class="cfl">Confidence</div>
+        <div class="cfl">Confidence<span class="help-tooltip-wrap"><span class="help-icon" onmouseenter="showTip(this)" onmouseleave="hideTip()">?</span><div class="help-tip">AI Confidence measures how certain the model is about its classification. 90%+ = very reliable. Below 70% = needs human review.</div></span></div>
         <div class="cfbw"><div class="cfbf" id="p-cfb" style="width:0%;background:var(--teal)"></div></div>
         <div class="cfp" id="p-cfp">—</div>
       </div>
@@ -898,8 +1081,9 @@ body.presenting .present-exit{display:flex}
 
   <div class="dr">
     <div class="drh">
-      <span class="drht">AI Decision Engine</span>
+      <span class="drht">AI Decision Engine<span class="help-tooltip-wrap"><span class="help-icon" onmouseenter="showTip(this)" onmouseleave="hideTip()">?</span><div class="help-tip">The AI Decision Engine uses GPT-4o to classify every report by category, urgency, and sentiment — then routes it to the right city team automatically.</div></span></span>
       <div style="display:flex;align-items:center;gap:8px">
+        <button class="glossary-btn" onclick="openGlossary()">📖 AI Glossary</button>
         <button class="ai-expand-btn" id="ai-expand-btn" onclick="toggleAllFields()">Expand All</button>
         <span class="ai-pl" id="ai-pl" style="background:var(--gd);color:var(--green);border:1px solid rgba(0,200,150,.25)">ROUTED</span>
       </div>
@@ -907,8 +1091,8 @@ body.presenting .present-exit{display:flex}
     <div class="aif">
       <div class="aifr"><div class="aik">Issue</div><div class="aiv" id="ai-issue">—</div></div>
       <div class="aifr"><div class="aik">Category</div><div class="aiv" id="ai-cat">—</div></div>
-      <div class="aifr"><div class="aik">Urgency</div><div class="aiv aud"><span class="audd" id="ai-ud" style="background:var(--t3)"></span><span id="ai-urg">—</span></div></div>
-      <div class="aifr"><div class="aik">AI Confidence</div><div class="aiv" id="ai-ct">—</div><div class="acbw"><div class="acbf" id="ai-cb" style="width:0%"></div></div></div>
+      <div class="aifr"><div class="aik">Urgency<span class="help-tooltip-wrap"><span class="help-icon" onmouseenter="showTip(this)" onmouseleave="hideTip()">?</span><div class="help-tip">HIGH = active safety risk, outage 3+ hours, blocking traffic. MED = partial service. LOW = cosmetic damage with no safety risk.</div></span></div><div class="aiv aud"><span class="audd" id="ai-ud" style="background:var(--t3)"></span><span id="ai-urg">—</span></div></div>
+      <div class="aifr"><div class="aik">AI Confidence<span class="help-tooltip-wrap"><span class="help-icon" onmouseenter="showTip(this)" onmouseleave="hideTip()">?</span><div class="help-tip">AI Confidence measures how certain the model is about its classification. 90%+ = very reliable. Below 70% = needs human review.</div></span></div><div class="aiv" id="ai-ct">—</div><div class="acbw"><div class="acbf" id="ai-cb" style="width:0%"></div></div></div>
       <div class="aifr"><div class="aik">Reasoning</div><div class="art" id="ai-rt">—</div></div>
       <div class="arb" id="ai-rb" style="background:transparent;border-color:var(--border)">
         <span id="ai-ra" style="font-size:14px;font-weight:700;color:var(--t3)">→</span>
@@ -916,7 +1100,7 @@ body.presenting .present-exit{display:flex}
       </div>
     </div>
     <div class="ssd">
-      <div class="ssdt">Signal Pipeline</div>
+      <div class="ssdt">Signal Pipeline<span class="help-tooltip-wrap"><span class="help-icon" onmouseenter="showTip(this)" onmouseleave="hideTip()">?</span><div class="help-tip">The 5-step flow: Citizen submits → Twilio receives → AI analyzes → Router decides → City team responds. Each node lights up as the report progresses.</div></span></div>
       <div class="ssdr">
         <div class="ssdn"><div class="ssdi" id="d0"><i data-lucide="smartphone"></i></div><div class="ssdl">Citizen</div></div>
         <div class="ssdc"><div class="ssdcf" id="dc0"></div></div>
@@ -989,20 +1173,27 @@ function onAuthSuccess(user, isNewSignup=false){
   currentUser=user;
   currentUserId=user.id;
   document.getElementById('auth-overlay').style.display='none';
-  const sh=document.getElementById('site-header');if(sh)sh.style.display='none';
-  const sf=document.getElementById('site-footer');if(sf)sf.style.display='none';
   const email=user.email||'';
   document.getElementById('user-av').textContent=email.charAt(0).toUpperCase();
   const udAv=document.getElementById('ud-avatar');if(udAv)udAv.textContent=email.charAt(0).toUpperCase();const udEm=document.getElementById('ud-email');if(udEm)udEm.textContent=email;
   document.getElementById('user-em').textContent=email;
   document.getElementById('user-chip').style.display='flex';
   // RBAC — role badge + tab visibility
-  const isOp=email.includes('admin')||email.includes('operator');
+  const isOp=email.includes('admin')||email.includes('operator')||email.includes('draftedusa');
   const rb=document.getElementById('role-badge');
   if(rb){rb.textContent=isOp?'OPERATOR':'CITIZEN';rb.className='role-badge '+(isOp?'op':'ct');}
   const udRole=document.getElementById('ud-role-dd');if(udRole)udRole.textContent=isOp?'OPERATOR':'CITIZEN';
-  const dashTab=document.querySelectorAll('.ntab')[1];
-  if(dashTab)dashTab.style.display=isOp?'':'none';
+  if(isOp){
+    // Operators: hide marketing header/footer, show app nav with both tabs
+    const sh=document.getElementById('site-header');if(sh)sh.style.display='none';
+    const sf=document.getElementById('site-footer');if(sf)sf.style.display='none';
+    document.querySelectorAll('.ntab').forEach(t=>t.style.display='flex');
+  } else {
+    // Citizens: keep site-header visible (relative positioning), hide operator tab
+    const sh=document.getElementById('site-header');if(sh)sh.style.position='relative';
+    const dashTab=document.querySelectorAll('.ntab')[1];
+    if(dashTab)dashTab.style.display='none';
+  }
   // Onboarding vs normal load
   if(isNewSignup&&!localStorage.getItem('civic_onboarded')){
     startOnboarding();
@@ -1032,6 +1223,7 @@ sb.auth.onAuthStateChange((event,session)=>{
     document.getElementById('auth-err').textContent='';
     document.getElementById('auth-err').style.color='#ff3d50';
     document.getElementById('my-reports-section').style.display='none';
+    const shEl2=document.getElementById('site-header');if(shEl2){shEl2.style.display='';shEl2.style.position='';}
     const dashTab=document.querySelectorAll('.ntab')[1];
     if(dashTab)dashTab.style.display='';
   }
@@ -1119,9 +1311,13 @@ async function doSubmit(){
   const urgKw=/danger|emergency|down|outage|block|hazard|injury|flood|urgent|no service|hours|can't|cannot|traffic|swerv/i;
   const urg=urgKw.test(desc)?'HIGH':desc.split(' ').length>12?'MED':'LOW';
   const conf=Math.min(98,Math.floor(72+desc.length*.18+(urg==='HIGH'?12:0)));
-  const tkId='CIVIC-'+Math.random().toString(36).substr(2,6).toUpperCase();
-  const rec={ticket_id:tkId,category:selCat.cat,urgency:urg,description:desc,location_text:addr,lat,lng,geo_link:gl,provider:prov,phone,ai_confidence:conf,ai_reason:reasonFor(selCat.cat,prov),routed_to:routeFor(selCat.cat,urg),status:'open'};
-  if(currentUserId)rec.user_id=currentUserId;
+  // Proper ticket ID with date stamp
+  const now=new Date();
+  const tkId='CVC-'+now.getFullYear().toString().slice(2)+String(now.getMonth()+1).padStart(2,'0')+String(now.getDate()).padStart(2,'0')+'-'+Math.random().toString(36).substr(2,6).toUpperCase();
+  const{data:{user}}=await sb.auth.getUser();
+  const rec={ticket_id:tkId,category:selCat.cat,urgency:urg,description:desc,location_text:addr,lat,lng,geo_link:gl,provider:prov,phone,ai_confidence:conf,ai_reason:reasonFor(selCat.cat,prov),routed_to:routeFor(selCat.cat,urg),status:'open',user_id:user?.id||null,user_email:user?.email||null};
+  if(mediaFile){rec.has_attachment=true;rec.attachment_name=mediaFile.name;}
+  window._lastReport=rec;
   const{error}=await sb.from('reports').insert(rec);
   btn.disabled=false;btn.innerHTML='Submit Report to CIVIC →';
   if(error){alert('Supabase error — check your credentials:\n\n'+error.message);return;}
@@ -1129,7 +1325,10 @@ async function doSubmit(){
   const so=document.getElementById('suc');so.style.display='block';
   document.getElementById('suc-tk').textContent=tkId;
   document.getElementById('suc-ml').href=gl;
-  document.getElementById('suc-bd').textContent=`Category: ${selCat.label}${prov?' ('+prov+')':''}\nUrgency: ${urg}  |  AI Confidence: ${conf}%\nLocation: ${addr}\nRouted to: ${rec.routed_to}\nGeo: ${gl}\n\nSMS confirmation queued to ${phone}.\nYour report is now live in the operator dashboard.`;
+  document.getElementById('suc-bd').textContent=`Category: ${selCat.label}${prov?' ('+prov+')':''}\nUrgency: ${urg}  |  AI Confidence: ${conf}%\nLocation: ${addr}\nRouted to: ${rec.routed_to}\nGeo: ${gl}${mediaFile?'\nAttachment: '+mediaFile.name:''}`;
+  const smsEl=document.getElementById('suc-sms');
+  if(smsEl)smsEl.textContent=`A confirmation has been sent to ${phone}. Text updates to (831) 531-5574 anytime.`;
+  loadMyReports();
 }
 
 function resetForm(){
@@ -1203,9 +1402,18 @@ function pinIcon(r){
   return L.divIcon({className:'',html:`<div style="position:relative;width:${sz}px;height:${sz}px">${isH?`<div style="position:absolute;inset:0;border-radius:50%;background:${col};opacity:.2;animation:rpl 2s ease-out infinite"></div>`:''}<div style="position:absolute;inset:${isH?4:2}px;border-radius:50%;background:${col};border:2px solid rgba(255,255,255,.75)"></div></div><style>@keyframes rpl{0%{transform:scale(1);opacity:.5}100%{transform:scale(2.8);opacity:0}}</style>`,iconSize:[sz,sz],iconAnchor:[sz/2,sz/2]});
 }
 
+function getZoneRadius(category){return{OUTAGE:8000,UTILITY:5000,FLOODING:6000,POTHOLE:null,GRAFFITI:null,DEBRIS:null,STREETLIGHT:null}[category]||null;}
+
 function addPin(r){
   if(!mainMap||!r.lat||!r.lng)return;
   const col=cCol(r.category);
+  // Zone overlay for area-affecting categories
+  const zoneRadius=getZoneRadius(r.category);
+  if(zoneRadius){
+    const zCol=r.category==='OUTAGE'?'#a78bfa':r.category==='UTILITY'?'#fb923c':'#3b8bff';
+    L.circle([r.lat,r.lng],{radius:zoneRadius,color:zCol,fillColor:zCol,fillOpacity:0.08,weight:1.5,opacity:0.4,dashArray:'6 4'}).addTo(mainMap);
+    L.circle([r.lat,r.lng],{radius:zoneRadius*0.4,color:zCol,fillColor:zCol,fillOpacity:0.12,weight:0}).addTo(mainMap);
+  }
   L.marker([r.lat,r.lng],{icon:pinIcon(r)}).addTo(window.cg).bindPopup(`
     <div style="font-family:'Inter',sans-serif;min-width:210px">
       <div style="font-family:'Syne',sans-serif;font-size:13px;font-weight:700;color:#fff;margin-bottom:5px">${cIco(r.category)} ${r.category} — <span style="color:${uCol(r.urgency)}">${r.urgency}</span></div>
@@ -1224,7 +1432,7 @@ async function loadReports(){
   const{data,error}=await sb.from('reports').select('*').order('created_at',{ascending:false}).limit(50);
   if(error){console.error(error);return;}
   allReports=data||[];allReports.forEach(addPin);
-  renderFeed();renderIL();updateKPIs();renderPortalFeed();
+  renderFeed();renderIL();updateKPIs();renderPortalFeed();renderCommunityFeed();
   if(allReports.length>0)updateAICard(allReports[0]);
   subscribe();
 }
@@ -1233,7 +1441,7 @@ function subscribe(){
   sb.channel('civic').on('postgres_changes',{event:'INSERT',schema:'public',table:'reports'},p=>{
     const r=p.new;allReports.unshift(r);showToast(r);addPin(r);
     lastInsertTime=Date.now();updateWebhookChip();
-    renderFeed();renderIL();updateKPIs();updateAICard(r);renderPortalFeed();runSig('d');
+    renderFeed();renderIL();updateKPIs();updateAICard(r);renderPortalFeed();renderCommunityFeed();runSig('d');
     if(mainMap&&r.lat&&r.lng)mainMap.flyTo([r.lat,r.lng],11,{duration:1.8});
   }).subscribe();
 }
@@ -1338,19 +1546,29 @@ function showToast(r){const col=r.urgency==='HIGH'?'#ff3d50':r.urgency==='MED'?'
 document.querySelector('.ph-url').innerHTML='<div class="udot"></div><span>'+window.location.host+'/report</span>';
 
 // ── LOAD MY REPORTS ──
-async function loadMyReports(){
-  if(!currentUserId)return;
+function loadMyReports(){
+  const userId=window._currentUserId||currentUserId;
+  if(!userId)return;
   const sec=document.getElementById('my-reports-section');
   if(!sec)return;
   sec.style.display='block';
-  const el=document.getElementById('my-reports-list');
-  const{data,error}=await sb.from('reports').select('*').eq('user_id',currentUserId).order('created_at',{ascending:false}).limit(5);
-  if(error||!data||!data.length){el.innerHTML='<div style="font-size:11px;color:var(--t3);padding:8px 0">No reports yet.</div>';return;}
-  el.innerHTML=data.map(r=>`
-    <div class="mr-item">
-      <div class="mr-left"><span class="mr-ico">${cIco(r.category)}</span><div><div class="mr-cat">${r.category}</div><div class="mr-loc">${r.location_text||'—'}</div></div></div>
-      <div class="mr-right"><span class="ili-ba ${bClass(r)}">${r.urgency}</span><a class="mr-maps" href="${r.geo_link||'#'}" target="_blank">Maps ↗</a></div>
-    </div>`).join('');
+  sb.from('reports').select('*').eq('user_id',userId).order('created_at',{ascending:false}).limit(10).then(({data})=>{
+    const el=document.getElementById('my-reports-list');
+    if(!el||!data)return;
+    if(data.length===0){el.innerHTML='<div class="no-reports">No reports submitted yet. Submit your first report above.</div>';return;}
+    el.innerHTML=data.map(r=>`
+      <div class="my-report-item">
+        <div class="mri-left">
+          <span class="${bClass(r)} mri-badge">${r.urgency}</span>
+          <div><div class="mri-type">${r.category}</div><div class="mri-loc">${r.location_text||'—'}</div></div>
+        </div>
+        <div class="mri-right">
+          <div class="mri-ticket">${r.ticket_id||'—'}</div>
+          <div class="mri-status ${r.status==='resolved'?'resolved':'open'}">${r.status==='resolved'?'✓ Resolved':'● Open'}</div>
+          <a class="mri-maps" href="${r.geo_link||'#'}" target="_blank">Maps ↗</a>
+        </div>
+      </div>`).join('');
+  });
 }
 
 // ── TRAFFIC TOGGLE ──
@@ -1584,6 +1802,143 @@ function carGoTo(idx){
 }
 function carPrev(){carGoTo(carIdx-1);}
 function carNext(){carGoTo(carIdx+1);}
+// ── MEDIA UPLOAD ──
+let mediaFile=null;
+function handleMediaFile(file){
+  if(!file)return;
+  mediaFile=file;
+  const preview=document.getElementById('media-preview');
+  const thumb=document.getElementById('mp-thumb');
+  const name=document.getElementById('mp-name');
+  const size=document.getElementById('mp-size');
+  preview.style.display='flex';
+  name.textContent=file.name;
+  size.textContent=(file.size/1024/1024).toFixed(2)+' MB';
+  if(file.type.startsWith('image/')){
+    const url=URL.createObjectURL(file);
+    thumb.innerHTML=`<img src="${url}" alt="preview">`;
+  } else if(file.type.startsWith('video/')){
+    thumb.innerHTML='🎬';
+  }
+}
+function handleMediaDrop(e){e.preventDefault();const file=e.dataTransfer.files[0];if(file)handleMediaFile(file);}
+function removeMedia(){
+  mediaFile=null;
+  document.getElementById('media-preview').style.display='none';
+  document.getElementById('mp-thumb').innerHTML='';
+  document.getElementById('media-file').value='';
+}
+
+// ── PDF RECEIPT ──
+function downloadReceipt(){
+  const r=window._lastReport;if(!r)return;
+  const content=`CIVIC — CITIZEN INTELLIGENCE & VISIBILITY IN COMMUNITIES
+civic-city.vercel.app
+════════════════════════════════════════
+INCIDENT REPORT RECEIPT
+════════════════════════════════════════
+Ticket ID:    ${r.ticket_id}
+Date:         ${new Date().toLocaleString()}
+Category:     ${r.category}${r.provider?' ('+r.provider+')':''}
+Urgency:      ${r.urgency}
+AI Confidence:${r.ai_confidence}%
+Location:     ${r.location_text}
+Geo Link:     ${r.geo_link}
+Routed To:    ${r.routed_to}
+Status:       Open — Under Review
+
+DESCRIPTION:
+${r.description}
+
+AI REASONING:
+${r.ai_reason}
+
+════════════════════════════════════════
+This receipt confirms your report was received and
+routed by the CIVIC AI triage system. Keep this
+reference number for follow-up inquiries.
+
+TWILIO SMS LINE: (831) 531-5574
+EMAIL: civic@draftedusa.com
+════════════════════════════════════════`.trim();
+  const blob=new Blob([content],{type:'text/plain'});
+  const url=URL.createObjectURL(blob);
+  const a=document.createElement('a');
+  a.href=url;a.download=`CIVIC-Receipt-${r.ticket_id}.txt`;a.click();
+  URL.revokeObjectURL(url);
+}
+
+// ── COMMUNITY FEED ──
+function renderCommunityFeed(){
+  const el=document.getElementById('cf-items');
+  const cnt=document.getElementById('cf-count');
+  if(!el)return;
+  if(cnt)cnt.textContent=allReports.length+' reports';
+  if(!allReports.length){el.innerHTML='<div class="cf-loading">No reports yet — be the first!</div>';return;}
+  el.innerHTML=allReports.slice(0,8).map((r,i)=>{
+    const col=cCol(r.category);
+    const timeAgo=getTimeAgo(r.created_at);
+    return `<div class="cf-item${i===0?' fresh':''}">
+      <div class="cf-item-icon" style="background:${col}15">${cIco(r.category)}</div>
+      <div class="cf-item-body">
+        <div class="cf-item-type">${r.category}<span class="${bClass(r)}" style="font-size:8px;padding:1px 5px;border-radius:3px">${r.urgency}</span></div>
+        <div class="cf-item-loc">${r.location_text||'—'}</div>
+      </div>
+      <div class="cf-item-time">${timeAgo}</div>
+    </div>`;
+  }).join('');
+}
+function getTimeAgo(dateStr){
+  if(!dateStr)return'just now';
+  const diff=Date.now()-new Date(dateStr).getTime();
+  const mins=Math.floor(diff/60000);
+  if(mins<1)return'just now';
+  if(mins<60)return mins+'m ago';
+  const hrs=Math.floor(mins/60);
+  if(hrs<24)return hrs+'h ago';
+  return Math.floor(hrs/24)+'d ago';
+}
+
+// ── LANDING PAGES ──
+function openLandingPage(page){
+  document.querySelectorAll('.landing-page').forEach(p=>p.style.display='none');
+  const target=document.getElementById('page-'+page);
+  if(target)target.style.display='block';
+  window.scrollTo(0,0);
+  const menu=document.getElementById('sh-mobile-menu');
+  if(menu)menu.classList.remove('open');
+}
+function closeLandingPage(){
+  document.querySelectorAll('.landing-page').forEach(p=>p.style.display='none');
+}
+
+// ── THEME TOGGLE ──
+function toggleTheme(){
+  document.body.classList.toggle('light-mode');
+  const isDark=!document.body.classList.contains('light-mode');
+  localStorage.setItem('civic-theme',isDark?'dark':'light');
+  document.querySelectorAll('.theme-toggle').forEach(btn=>{
+    const svgs=btn.querySelectorAll('svg');
+    if(svgs[0])svgs[0].style.display=isDark?'block':'none';
+    if(svgs[1])svgs[1].style.display=isDark?'none':'block';
+  });
+  // Sync site-header theme icons by ID
+  const d=document.getElementById('theme-icon-dark');
+  const l=document.getElementById('theme-icon-light');
+  if(d)d.style.display=isDark?'block':'none';
+  if(l)l.style.display=isDark?'none':'block';
+}
+// Apply saved theme on load
+if(localStorage.getItem('civic-theme')==='light'){document.body.classList.add('light-mode');}
+
+// ── HELP TOOLTIPS ──
+function showTip(el){const tip=el.nextElementSibling;if(tip)tip.style.display='block';}
+function hideTip(){document.querySelectorAll('.help-tip').forEach(t=>t.style.display='none');}
+
+// ── GLOSSARY ──
+function openGlossary(){document.getElementById('glossary-modal').style.display='flex';}
+function closeGlossary(){document.getElementById('glossary-modal').style.display='none';}
+
 lucide.createIcons();
 </script>
 <div id="toasts" style="position:fixed;bottom:24px;right:24px;z-index:9999;display:flex;flex-direction:column;gap:8px;pointer-events:none"></div>
@@ -1652,12 +2007,13 @@ lucide.createIcons();
         </div>
       </div>
       <nav class="sh-nav" id="sh-nav">
-        <a class="sh-link" href="#" onclick="shScrollTo('features');return false">Features</a>
-        <a class="sh-link" href="#" onclick="shScrollTo('how');return false">How It Works</a>
-        <a class="sh-link" href="#" onclick="shScrollTo('tech');return false">Technology</a>
-        <a class="sh-link" href="#" onclick="shScrollTo('contact');return false">Contact</a>
+        <a class="sh-link" href="#" onclick="openLandingPage('features');return false">Features</a>
+        <a class="sh-link" href="#" onclick="openLandingPage('how');return false">How It Works</a>
+        <a class="sh-link" href="#" onclick="openLandingPage('tech');return false">Technology</a>
+        <a class="sh-link" href="#" onclick="openLandingPage('contact');return false">Contact</a>
       </nav>
       <div class="sh-actions">
+        <button class="theme-toggle" onclick="toggleTheme()" title="Toggle light/dark mode"><svg id="theme-icon-dark" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg><svg id="theme-icon-light" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" style="display:none"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg></button>
         <button class="sh-btn-ghost" onclick="switchToSignIn()">Sign In</button>
         <button class="sh-btn-primary" onclick="switchToSignUp()">Get Access →</button>
         <button class="sh-hamburger" id="sh-hamburger" onclick="toggleMobileMenu()">
@@ -1666,10 +2022,10 @@ lucide.createIcons();
       </div>
     </div>
     <div class="sh-mobile-menu" id="sh-mobile-menu">
-      <a class="sh-mobile-link" href="#" onclick="toggleMobileMenu();return false">Features</a>
-      <a class="sh-mobile-link" href="#" onclick="toggleMobileMenu();return false">How It Works</a>
-      <a class="sh-mobile-link" href="#" onclick="toggleMobileMenu();return false">Technology</a>
-      <a class="sh-mobile-link" href="#" onclick="toggleMobileMenu();return false">Contact</a>
+      <a class="sh-mobile-link" href="#" onclick="openLandingPage('features');return false">Features</a>
+      <a class="sh-mobile-link" href="#" onclick="openLandingPage('how');return false">How It Works</a>
+      <a class="sh-mobile-link" href="#" onclick="openLandingPage('tech');return false">Technology</a>
+      <a class="sh-mobile-link" href="#" onclick="openLandingPage('contact');return false">Contact</a>
       <div class="sh-mobile-actions">
         <button class="sh-btn-ghost w-full" onclick="switchToSignIn();toggleMobileMenu()">Sign In</button>
         <button class="sh-btn-primary w-full" onclick="switchToSignUp();toggleMobileMenu()">Get Access →</button>
@@ -1745,6 +2101,11 @@ lucide.createIcons();
         </div>
       </div>
       <div class="sf-bottom">
+        <div class="sf-social">
+          <a class="sf-social-ic" href="https://instagram.com" target="_blank" title="Instagram"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a>
+          <a class="sf-social-ic" href="https://facebook.com" target="_blank" title="Facebook"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
+          <a class="sf-social-ic" href="https://x.com" target="_blank" title="X / Twitter"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+        </div>
         <div class="sf-copy">© 2026 CIVIC — Citizen Intelligence &amp; Visibility in Communities. Built with AI by Jordan Montgomery.</div>
         <div class="sf-tech-stack">
           <span class="sf-tech">Make.com</span><span class="sf-tech-sep">·</span>
@@ -1757,6 +2118,100 @@ lucide.createIcons();
     </div>
   </div>
 </div>
+<!-- ═══ LANDING PAGES ═══ -->
+<div id="page-features" class="landing-page" style="display:none">
+  <div class="lp-hero">
+    <div class="lp-back" onclick="closeLandingPage()">← Back to CIVIC</div>
+    <h1 class="lp-h1">Platform <span>Features</span></h1>
+    <p class="lp-sub">Everything you need to report, route, and resolve city issues — powered by AI.</p>
+  </div>
+  <div class="lp-grid">
+    <div class="lp-card"><div class="lp-card-icon">🧠</div><h3>AI Triage Engine</h3><p>GPT-4o classifies every report by category, urgency, and sentiment in under 2 seconds.</p></div>
+    <div class="lp-card"><div class="lp-card-icon">📍</div><h3>Geolocation Routing</h3><p>Every report gets a GPS-precise Google Maps link automatically generated from citizen input.</p></div>
+    <div class="lp-card"><div class="lp-card-icon">📡</div><h3>Multi-Modal Intake</h3><p>Citizens report via web form or SMS. Photos and videos can be attached for full context.</p></div>
+    <div class="lp-card"><div class="lp-card-icon">🔀</div><h3>Smart Routing</h3><p>HIGH urgency tickets go to Emergency Trello. Standard issues log to Google Sheets instantly.</p></div>
+    <div class="lp-card"><div class="lp-card-icon">📊</div><h3>Live Dashboard</h3><p>Real-time operator view with map pins, zone overlays, and AI decision transparency.</p></div>
+    <div class="lp-card"><div class="lp-card-icon">🔔</div><h3>Instant Notifications</h3><p>SMS and email confirmations sent automatically to citizens and operators on every submission.</p></div>
+  </div>
+</div>
+
+<div id="page-how" class="landing-page" style="display:none">
+  <div class="lp-hero">
+    <div class="lp-back" onclick="closeLandingPage()">← Back</div>
+    <h1 class="lp-h1">How It <span>Works</span></h1>
+    <p class="lp-sub">Five steps from citizen report to city action.</p>
+  </div>
+  <div class="lp-steps">
+    <div class="lp-step"><div class="lp-step-num">01</div><h3>Citizen Reports</h3><p>Submit via web form or text (831) 531-5574. Attach a photo or video of the issue.</p></div>
+    <div class="lp-step-line"></div>
+    <div class="lp-step"><div class="lp-step-num">02</div><h3>Twilio Receives</h3><p>Twilio webhook catches the SMS/MMS and fires it into the Make.com pipeline instantly.</p></div>
+    <div class="lp-step-line"></div>
+    <div class="lp-step"><div class="lp-step-num">03</div><h3>AI Classifies</h3><p>OpenAI Vision reads the image. GPT-4o scores urgency, sentiment, and routes appropriately.</p></div>
+    <div class="lp-step-line"></div>
+    <div class="lp-step"><div class="lp-step-num">04</div><h3>Auto-Routed</h3><p>HIGH urgency → Emergency Trello board. Standard → Google Sheets CMS for tracking.</p></div>
+    <div class="lp-step-line"></div>
+    <div class="lp-step"><div class="lp-step-num">05</div><h3>City Responds</h3><p>City worker sees ticket with GPS link. Citizen receives SMS confirmation with ticket ID.</p></div>
+  </div>
+</div>
+
+<div id="page-tech" class="landing-page" style="display:none">
+  <div class="lp-hero">
+    <div class="lp-back" onclick="closeLandingPage()">← Back</div>
+    <h1 class="lp-h1">The <span>Technology</span></h1>
+    <p class="lp-sub">Enterprise-grade stack. Zero infrastructure cost.</p>
+  </div>
+  <div class="lp-tech-grid">
+    <div class="lp-tech-card"><div class="ltc-logo">🔧</div><div class="ltc-name">Make.com</div><div class="ltc-desc">Visual automation platform. Orchestrates the entire AI pipeline with no-code scenario flows.</div><div class="ltc-badge">Automation</div></div>
+    <div class="lp-tech-card"><div class="ltc-logo">🧠</div><div class="ltc-name">OpenAI GPT-4o</div><div class="ltc-desc">Vision + language model classifies images and scores urgency from citizen descriptions.</div><div class="ltc-badge">AI Engine</div></div>
+    <div class="lp-tech-card"><div class="ltc-logo">📱</div><div class="ltc-name">Twilio</div><div class="ltc-desc">SMS/MMS intake via (831) 531-5574. Handles multi-modal citizen submissions.</div><div class="ltc-badge">Communications</div></div>
+    <div class="lp-tech-card"><div class="ltc-logo">🗄️</div><div class="ltc-name">Supabase</div><div class="ltc-desc">PostgreSQL database with real-time subscriptions. Auth, storage, and live dashboard sync.</div><div class="ltc-badge">Database</div></div>
+    <div class="lp-tech-card"><div class="ltc-logo">🗺️</div><div class="ltc-name">Leaflet.js</div><div class="ltc-desc">Interactive map with cluster pins, zone overlays, and real-time incident visualization.</div><div class="ltc-badge">Mapping</div></div>
+    <div class="lp-tech-card"><div class="ltc-logo">⚡</div><div class="ltc-name">Vercel</div><div class="ltc-desc">Global CDN deployment. Automatic deploys from GitHub. Zero-config production hosting.</div><div class="ltc-badge">Hosting</div></div>
+  </div>
+</div>
+
+<div id="page-contact" class="landing-page" style="display:none">
+  <div class="lp-hero">
+    <div class="lp-back" onclick="closeLandingPage()">← Back</div>
+    <h1 class="lp-h1">Contact <span>CIVIC</span></h1>
+    <p class="lp-sub">Get in touch with the team.</p>
+  </div>
+  <div class="lp-contact-grid">
+    <div class="lp-contact-card"><div class="lcc-icon">📱</div><div class="lcc-label">SMS Hotline</div><div class="lcc-val">(831) 531-5574</div><div class="lcc-sub">Text any city issue 24/7</div></div>
+    <div class="lp-contact-card"><div class="lcc-icon">🌐</div><div class="lcc-label">Live Platform</div><div class="lcc-val">civic-city.vercel.app</div><div class="lcc-sub">Submit reports online</div></div>
+    <div class="lp-contact-card"><div class="lcc-icon">📧</div><div class="lcc-label">Email</div><div class="lcc-val">civic@draftedusa.com</div><div class="lcc-sub">General inquiries</div></div>
+    <div class="lp-contact-card"><div class="lcc-icon">🏢</div><div class="lcc-label">Organization</div><div class="lcc-val">Drafted USA</div><div class="lcc-sub">AI Accelerator Program 2026</div></div>
+  </div>
+  <div class="lp-social">
+    <div class="lp-social-title">Follow CIVIC</div>
+    <div class="lp-social-row">
+      <a class="lp-social-btn ig" href="https://instagram.com" target="_blank"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>Instagram</a>
+      <a class="lp-social-btn fb" href="https://facebook.com" target="_blank"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>Facebook</a>
+      <a class="lp-social-btn x" href="https://x.com" target="_blank"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>X (Twitter)</a>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ GLOSSARY MODAL ═══ -->
+<div class="glossary-modal" id="glossary-modal" style="display:none">
+  <div class="gm-backdrop" onclick="closeGlossary()"></div>
+  <div class="gm-card">
+    <div class="gm-header">
+      <div class="gm-title">CIVIC AI Glossary</div>
+      <button class="gm-close" onclick="closeGlossary()">✕</button>
+    </div>
+    <div class="gm-body">
+      <div class="gm-term"><div class="gm-term-name">AI Confidence</div><div class="gm-term-def">Percentage score (0–100%) indicating how certain the AI is about its classification. Above 88% = high confidence (green). 72–87% = moderate (yellow). Below 72% = low (red) — needs human review.</div></div>
+      <div class="gm-term"><div class="gm-term-name">Urgency Level</div><div class="gm-term-def">HIGH = active safety risk, outage 3+ hours, blocking traffic. MED = partial service, inconvenience. LOW = cosmetic damage, minor complaint with no safety risk.</div></div>
+      <div class="gm-term"><div class="gm-term-name">AI Triage</div><div class="gm-term-def">The automated process where GPT-4o reads the citizen's description and any attached image, then classifies the issue and routes it to the appropriate city team.</div></div>
+      <div class="gm-term"><div class="gm-term-name">Signal Pipeline</div><div class="gm-term-def">The 5-step flow: Citizen submits → Twilio receives → AI analyzes → Router decides → City team responds. Each node lights up as the report progresses.</div></div>
+      <div class="gm-term"><div class="gm-term-name">Zone Overlay</div><div class="gm-term-def">The shaded circle on the map showing the estimated affected area of an outage or utility issue. Radius is based on typical service coverage for that issue type.</div></div>
+      <div class="gm-term"><div class="gm-term-name">Webhook Active</div><div class="gm-term-def">The Make.com scenario is running and the Twilio number (831) 531-5574 is actively listening for new SMS/MMS reports.</div></div>
+      <div class="gm-term"><div class="gm-term-name">AWAITING SIGNAL</div><div class="gm-term-def">No new reports have arrived via the Twilio SMS line in the last 5 minutes. The system is active but idle — ready to receive.</div></div>
+    </div>
+  </div>
+</div>
+
 <div class="drawer-backdrop" id="drawer-backdrop" onclick="closeDrawer()"></div>
 <div class="bottom-drawer" id="bottom-drawer">
   <div class="drawer-handle"></div>
